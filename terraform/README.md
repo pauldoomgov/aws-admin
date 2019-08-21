@@ -17,8 +17,9 @@ Creates the standardized IAM roles and policies for TTS AWS Accounts. This inclu
 
 #### [app](/app)
 * Allow account owners to customize their policies by the type of workload the account handles:
-    * development
+    * sandbox *default*
     * test
+    * development
     * staging
     * production
 
@@ -29,7 +30,7 @@ Some variables are required and do not have default values. Those variables must
 | Variable  | Description | Required | Initial value |
 |---|---|---|---|
 | backend_bucket | s3 bucket for Terraform .tfstate  | Yes |  |
-| appenv | customize variables/policies per AWS account environment/type | Yes | `test | development | staging | production` |
+| appenv | customize policies per AWS account environment/type `test | development | staging | production` | Yes | `sandbox` |
 | cc_account_id | TTS CloudCheckr account id | Yes | |
 | cc_external_id | Cloudcheckqr AWS Account| Yes | |
 | ip_whitelist | optionally restrict AWS account to IP address | No | |
