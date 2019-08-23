@@ -2,12 +2,44 @@
 
 This repository contains AWS Cross Account user management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is management by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov)).
 
-## [Setup](/terraform)
+## Overview
+Creates the standardized IAM roles and policies for TTS AWS Accounts. This includes:
+
+#### [iam](/terraform/iam)
+* Technology Portfolio Cross Account "break glass" admin access.
+* CloudWatch Flow Logs Access to Payer Account *Optionally: GSA SecOps Enterprise Logging*.
+* Enforces GSA's MFA and Password polices.
+* Continous Integration read-only role for future configuration and compliance auditing.
+
+#### [cloudcheckr](/terraform/cloudcheckr)
+* CloudCheckr Inventory access *w/ optional Security/Cleanup/Cost/Usage extended policies*.
+
+#### [guardduty](/terraform/guardduty)
+* Guardduty security alerting
+
+#### [app](/terraform/app)
+* Allow account owners to customize their policies by the type of workload the account handles:
+    * sandbox *default*
+    * test
+    * development
+    * staging
+    * production
+
+## Variables
+
+Some variables are required and do not have default values. Those variables must be filled in by you. Otherwise, you can accept the default values if they meet your needs.
+
+| Variable  | Description | Required | Initial value |
+|---|---|---|---|
+| backend_bucket | s3 bucket for Terraform .tfstate  | Yes |  |
+| appenv | customize policies per AWS account environment/type `test | development | staging | production` | Yes | `sandbox` |
+| cc_account_id | TTS CloudCheckr account id | Yes | |
+| cc_external_id | Cloudcheckqr AWS Account| Yes | |
+| ip_whitelist | optionally restrict AWS account to IP address | No | |
 
 ### Credits
 
 This repository is based on [GSA's GRACE Platform](https://github.com/gsa?utf8=✓&q=grace&type=&language=)
-
 
 ### Public domain
 

@@ -1,3 +1,3 @@
 resource "aws_guardduty_detector" "master-tts" {
-  enable = true
+  enable = "${var.aws_guardduty_enabled}"
 }

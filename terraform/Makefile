@@ -21,7 +21,7 @@ apply: plan
 	terraform apply --auto-approve
 
 plan: validate
-	terraform plan
+	terraform validate
 
 validate: init
 	terraform validate
