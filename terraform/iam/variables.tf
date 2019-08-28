@@ -3,6 +3,11 @@ variable "env" {
   default     = "sandbox"
 }
 
+variable "idp_url" {
+  description = "Identity Provider URL"
+  default = "idp.int.identitysandbox.gov"
+}
+
 variable "is_development" {
   description = "is the current environment development? returns 1 (true) or 0 (false)"
 }

@@ -1,6 +1,6 @@
 # login.gov openid connect
 resource "aws_iam_openid_connect_provider" "login-dot-gov" {
-  url = "https://idp.int.identitysandbox.gov"
+  url = "https://${var.idp_url}"
 
   client_id_list = [
     "urn:gov:gsa:openidconnect.profiles:sp:sso:opp:aws_authentication",
@@ -13,6 +13,7 @@ resource "aws_iam_openid_connect_provider" "login-dot-gov" {
 
 # login.gov saml
 resource "aws_iam_saml_provider" "login-dot-gov" {
-  name = "idp.int.identitysandbox.gov"
+  name = "${var.idp_url}"
+
   saml_metadata_document = "${file("files/login-dot-gov-saml.xml")}"
 }
