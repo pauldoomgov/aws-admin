@@ -1,5 +1,5 @@
 resource "aws_cognito_user_pool" "login-dot-gov" {
-  name = "login gov pool"
+  name = "${var.env} login gov pool"
 
   admin_create_user_config {
     allow_admin_create_user_only = true
@@ -21,7 +21,7 @@ resource "aws_cognito_identity_provider" "login-dot-gov-idp" {
   provider_type = "SAML"
 
   provider_details = {
-    MetadataURL = "https://idp.int.identitysandbox.gov/api/saml/metadata2019"
+    MetadataURL = "https://${var.login_gov_idp_url}/api/saml/metadata2019"
   }
 
   attribute_mapping = {
