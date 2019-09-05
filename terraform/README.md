@@ -23,6 +23,9 @@ Creates the standardized IAM roles and policies for TTS AWS Accounts. This inclu
     * staging
     * production
 
+#### [cognito](/cognito)
+* Cognito user pools with login.gov SAML IdP configuration
+
 ## Variables
 
 Some variables are required and do not have default values. Those variables must be filled in by you. Otherwise, you can accept the default values if they meet your needs.
