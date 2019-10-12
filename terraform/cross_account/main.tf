@@ -11,12 +11,12 @@ resource "aws_iam_group" "admins" {
 data "aws_iam_policy_document" "cross_account" {
   statement {
     actions   = ["sts:AssumeRole"]
-    resources = ["arn:aws:iam::${var.dest_account_number}:role/${var.role_name}"]
+    resources = [for acct in var.dest_account_numbers : "arn:aws:iam::${acct}:role/${var.role_name}"]
   }
 }
 
 resource "aws_iam_policy" "assume_role" {
-  name = "allow-assume-cross-account-role"
+  name   = "allow-assume-cross-account-role"
   policy = "${data.aws_iam_policy_document.cross_account.json}"
 }
 
@@ -25,6 +25,6 @@ resource "aws_iam_group_policy_attachment" "assume_role" {
   policy_arn = "${aws_iam_policy.assume_role.arn}"
 }
 
-output "switch_role_url" {
-  value = "https://signin.aws.amazon.com/switchrole?roleName=${var.role_name}&account=${var.dest_account_number}&displayName=${var.dest_account_number}"
+output "switch_role_urls" {
+  value = { for acct in var.dest_account_numbers : "${acct}" => "https://signin.aws.amazon.com/switchrole?roleName=${var.role_name}&account=${acct}&displayName=${acct}" }
 }
