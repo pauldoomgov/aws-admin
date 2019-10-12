@@ -1,6 +1,5 @@
 provider "aws" {
   version = "~> 2.32"
-  # account: tts-prod (133032889584)
   region = "us-east-1"
 }
 
