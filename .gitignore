@@ -1,9 +1,6 @@
 .DS_Store
 /todo.txt
-
-
-# https://github.com/github/gitignore/blob/21419e391a78f2487340b3b1240b988aaf15b54f/Terraform.gitignore
-
+.terraform/
 # Local .terraform directories
 **/.terraform/*
 

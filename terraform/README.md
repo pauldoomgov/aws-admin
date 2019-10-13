@@ -1,4 +1,4 @@
-# TTS CORE AWS Cross Account IAM 
+# TTS CORE AWS Cross Account IAM
 
 ## Overview
 Creates the standardized IAM roles and policies for TTS AWS Accounts. This includes:
@@ -23,6 +23,9 @@ Creates the standardized IAM roles and policies for TTS AWS Accounts. This inclu
     * staging
     * production
 
+#### [cognito](/cognito)
+* Cognito user pools with login.gov SAML IdP configuration
+
 ## Variables
 
 Some variables are required and do not have default values. Those variables must be filled in by you. Otherwise, you can accept the default values if they meet your needs.
@@ -32,6 +35,5 @@ Some variables are required and do not have default values. Those variables must
 | backend_bucket | s3 bucket for Terraform .tfstate  | Yes |  |
 | appenv | customize policies per AWS account environment/type `test | development | staging | production` | Yes | `sandbox` |
 | cc_account_id | TTS CloudCheckr account id | Yes | |
-| cc_external_id | Cloudcheckqr AWS Account| Yes | |
+| cc_external_id | Cloudcheckr AWS Account| Yes | |
 | ip_whitelist | optionally restrict AWS account to IP address | No | |
-
