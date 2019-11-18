@@ -10,7 +10,7 @@ resource "aws_iam_group" "admins" {
 data "aws_iam_policy_document" "cross_account" {
   statement {
     actions   = ["sts:AssumeRole"]
-    resources = [for acct in var.dest_account_numbers : "arn:aws:iam::${acct}:role/${var.role_name}"]
+    resources = [for acct in data.aws_organizations_organization.main.accounts : "arn:aws:iam::${acct.id}:role/${var.role_name}"]
   }
 }
 
