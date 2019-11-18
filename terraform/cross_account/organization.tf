@@ -40,3 +40,14 @@ resource "aws_organizations_organizational_unit" "opp" {
   name      = "OPP"
   parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
 }
+
+module "tech_portfolio" {
+  source = "./business_unit"
+  providers = {
+    aws = "aws.payer"
+  }
+
+  name   = "Tech Portfolio"
+  email  = "devops@gsa.gov"
+  amount = "2000"
+}
