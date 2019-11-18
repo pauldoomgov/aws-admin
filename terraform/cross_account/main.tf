@@ -1,3 +1,13 @@
+terraform {
+  backend "s3" {
+    # needs to match bootstrap module
+    bucket         = "tts-aws-admin"
+    key            = "terraform/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "aws-admin-terraform-state-lock"
+  }
+}
+
 provider "aws" {
   version = "~> 2.32"
   region  = "us-east-1"
