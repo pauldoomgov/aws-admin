@@ -15,7 +15,7 @@ resource "aws_budgets_budget" "bu" {
   budget_type = "COST"
   limit_unit  = "USD"
   # for some reason it adds a single decimal
-  limit_amount      = "${var.amount}.0"
+  limit_amount      = "${var.monthly_limit}.0"
   time_period_start = "2019-11-07_00:00"
   time_unit         = "MONTHLY"
 
