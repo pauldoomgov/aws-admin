@@ -40,9 +40,3 @@ resource "aws_organizations_organizational_unit" "opp" {
   name      = "OPP"
   parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
 }
-
-resource "aws_organizations_organizational_unit" "tts" {
-  provider  = aws.payer
-  name      = "TTS Tech Portfolio"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
-}
