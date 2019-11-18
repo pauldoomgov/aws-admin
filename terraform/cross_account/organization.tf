@@ -34,11 +34,13 @@ resource "aws_organizations_organizational_unit" "login_gov" {
   name      = "login.gov"
   parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
 }
+
 resource "aws_organizations_organizational_unit" "opp" {
   provider  = aws.payer
   name      = "OPP"
   parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
 }
+
 resource "aws_organizations_organizational_unit" "tts" {
   provider  = aws.payer
   name      = "TTS Tech Portfolio"
