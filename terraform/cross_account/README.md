@@ -12,7 +12,6 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Add a tag of `Project`: `https://github.com/18F/aws-admin`.
 1. Set a `Role name` of `CrossAccountAdmin`.
 1. Create it.
-1. Add to the [`dest_account_numbers`](vars.tf).
 1. Using credentials for the source account, run a `terraform apply` from this directory.
 
 ## Signing in
