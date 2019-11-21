@@ -41,8 +41,13 @@ resource "aws_organizations_organizational_unit" "opp" {
   parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
 }
 
-resource "aws_organizations_organizational_unit" "tts" {
-  provider  = aws.payer
-  name      = "TTS Tech Portfolio"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+module "tech_portfolio" {
+  source = "./business_unit"
+  providers = {
+    aws = "aws.payer"
+  }
+
+  name          = "Tech Portfolio"
+  email         = "devops@gsa.gov"
+  monthly_limit = 2000
 }
