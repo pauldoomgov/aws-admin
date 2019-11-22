@@ -8,9 +8,11 @@ terraform {
   }
 }
 
+# source account
 provider "aws" {
   version = "~> 2.32"
-  region  = "us-east-1"
+  # arbitrary, since most of these resources are global
+  region = "us-east-1"
 }
 
 resource "aws_iam_group" "admins" {

@@ -34,7 +34,7 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Add a tag of `Project`: `https://github.com/18F/aws-admin`.
 1. Set a `Role name` of `CrossAccountAdmin`.
 1. Create it.
-1. Using credentials for the source account, run a `terraform apply` from this directory.
+1. Mark a `Y` in the `Role switching enabled?` column of [the AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 ### Signing in to destination accounts
 
