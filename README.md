@@ -36,9 +36,9 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Create it.
 1. Using credentials for the source account, run a `terraform apply` from this directory.
 
-## Signing in
+## Signing in to destination accounts
 
-1. [Log in to the source account.](https://133032889584.signin.aws.amazon.com/console)
-1. Use the output `switch_role_urls` from Terraform.
+1. [Log in to the source account using IAM](https://133032889584.signin.aws.amazon.com/console)
+1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
