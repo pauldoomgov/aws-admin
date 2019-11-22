@@ -2,6 +2,24 @@
 
 This repository contains AWS Cross Account user management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is management by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov)).
 
+## Setup
+
+1. [Set up AWS credentials](https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e) for the AWS account `133032889584`
+1. [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
+1. Clone this repository
+1. Set up Terraform
+
+   ```sh
+   cd aws-admin/terraform
+   terraform init
+   ```
+
+1. Confirm the AWS connection works
+
+   ```sh
+   terraform plan
+   ```
+
 ## Cross-account access
 
 _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)._
