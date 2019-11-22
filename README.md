@@ -26,7 +26,7 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 
 **Source account: `133032889584`**
 
-## Adding a new destination account
+### Adding a new destination account
 
 1. [Log in](https://console.aws.amazon.com/console/home) to the destination account.
 1. [Create a role for "another AWS account"](https://console.aws.amazon.com/iam/home#/roles$new?step=type&roleType=crossAccount). For the `Account ID`, enter `133032889584`.
@@ -36,7 +36,7 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Create it.
 1. Using credentials for the source account, run a `terraform apply` from this directory.
 
-## Signing in to destination accounts
+### Signing in to destination accounts
 
 1. [Log in to the source account using IAM](https://133032889584.signin.aws.amazon.com/console)
 1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
