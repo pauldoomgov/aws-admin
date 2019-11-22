@@ -1,35 +1,35 @@
-provider "aws" {}
-
 terraform {
   backend "s3" {
-    region = "us-east-1"
+    # needs to match bootstrap module
+    bucket         = "tts-aws-admin"
+    key            = "terraform/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "aws-admin-terraform-state-lock"
   }
 }
 
-module "app" {
-  source = "./app"
-  appenv = "${var.appenv}"
+provider "aws" {
+  version = "~> 2.32"
+  region  = "us-east-1"
 }
 
-module "iam" {
-  source         = "./iam"
-  env            = "${var.appenv}"
-  aws_account_id = "${module.app.account_id}"
-  is_production  = "${module.app.is_production}"
-  is_test        = "${module.app.is_test}"
-  is_staging     = "${module.app.is_staging}"
-  is_development = "${module.app.is_development}"
-  ip_whitelist   = "${var.ip_whitelist}"
+resource "aws_iam_group" "admins" {
+  name = "tts-tech-portfolio-admins"
 }
 
-module "guardduty" {
-  source = "./guardduty"
+data "aws_iam_policy_document" "cross_account" {
+  statement {
+    actions   = ["sts:AssumeRole"]
+    resources = [for acct in data.aws_organizations_organization.main.accounts : "arn:aws:iam::${acct.id}:role/${var.role_name}"]
+  }
 }
 
-module "cloudcheckr" {
-  source            = "./cloudcheckr"
-  account_id        = "${var.cc_account_id}"
-  external_id       = "${var.cc_external_id}"
-  enable            = "${module.app.is_development}"
-  cloudtrail_bucket = "tts-${var.appenv}-logging"
+resource "aws_iam_policy" "assume_role" {
+  name   = "allow-assume-cross-account-role"
+  policy = "${data.aws_iam_policy_document.cross_account.json}"
+}
+
+resource "aws_iam_group_policy_attachment" "assume_role" {
+  group      = "${aws_iam_group.admins.name}"
+  policy_arn = "${aws_iam_policy.assume_role.arn}"
 }

@@ -2,49 +2,25 @@
 
 This repository contains AWS Cross Account user management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is management by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov)).
 
-## Overview
-Creates the standardized IAM roles and policies for TTS AWS Accounts. This includes:
+## Cross-account access
 
-#### [iam](/terraform/iam)
-* Technology Portfolio Cross Account "break glass" admin access.
-* CloudWatch Flow Logs Access to Payer Account *Optionally: GSA SecOps Enterprise Logging*.
-* Enforces GSA's MFA and Password polices.
-* Continous Integration read-only role for future configuration and compliance auditing.
+_Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)._
 
-#### [cloudcheckr](/terraform/cloudcheckr)
-* CloudCheckr Inventory access *w/ optional Security/Cleanup/Cost/Usage extended policies*.
+**Source account: `133032889584`**
 
-#### [guardduty](/terraform/guardduty)
-* Guardduty security alerting
+## Adding a new destination account
 
-#### [app](/terraform/app)
-* Allow account owners to customize their policies by the type of workload the account handles:
-    * sandbox *default*
-    * test
-    * development
-    * staging
-    * production
+1. [Log in](https://console.aws.amazon.com/console/home) to the destination account.
+1. [Create a role for "another AWS account"](https://console.aws.amazon.com/iam/home#/roles$new?step=type&roleType=crossAccount). For the `Account ID`, enter `133032889584`.
+1. Select the [`AdministratorAccess`](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html#jf_administrator) policy.
+1. Add a tag of `Project`: `https://github.com/18F/aws-admin`.
+1. Set a `Role name` of `CrossAccountAdmin`.
+1. Create it.
+1. Using credentials for the source account, run a `terraform apply` from this directory.
 
-## Variables
+## Signing in
 
-Some variables are required and do not have default values. Those variables must be filled in by you. Otherwise, you can accept the default values if they meet your needs.
+1. [Log in to the source account.](https://133032889584.signin.aws.amazon.com/console)
+1. Use the output `switch_role_urls` from Terraform.
 
-| Variable  | Description | Required | Initial value |
-|---|---|---|---|
-| backend_bucket | s3 bucket for Terraform .tfstate  | Yes |  |
-| appenv | customize policies per AWS account environment/type `test | development | staging | production` | Yes | `sandbox` |
-| cc_account_id | TTS CloudCheckr account id | Yes | |
-| cc_external_id | Cloudcheckr AWS Account| Yes | |
-| ip_whitelist | optionally restrict AWS account to IP address | No | |
-
-### Credits
-
-This repository is based on [GSA's GRACE Platform](https://github.com/gsa?utf8=✓&q=grace&type=&language=)
-
-### Public domain
-
-This project is in the worldwide [public domain](LICENSE.md). As stated in [CONTRIBUTING](CONTRIBUTING.md):
-
-> This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
->
-> All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
+[More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
