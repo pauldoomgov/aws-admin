@@ -1,6 +1,6 @@
 # TTS-wide AWS Account Adminstration
 
-This repository contains AWS Cross Account user management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is management by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov)).
+This repository contains AWS cross-account management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is managed by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov).
 
 ## Setup
 
@@ -34,7 +34,7 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Add a tag of `Project`: `https://github.com/18F/aws-admin`.
 1. Set a `Role name` of `CrossAccountAdmin`.
 1. Create it.
-1. Using credentials for the source account, run a `terraform apply` from this directory.
+1. Mark a `Y` in the `Role switching enabled?` column of [the AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 ### Signing in to destination accounts
 
