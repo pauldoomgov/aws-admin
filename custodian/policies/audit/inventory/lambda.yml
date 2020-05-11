@@ -1,0 +1,42 @@
+policies:
+
+  - name: lambda-filter-policy
+    resource: lambda 
+    description: |
+      Retrieve list of Lambda functions that match regex.
+    filters:
+      - or:
+          - "tag:Audit": absent
+          - "tag:Audit": empty
+          - type: value
+            key: Name
+            op: regex
+            value: ".*"
+
+  - name: lambda_runtime_audit
+    resource: lambda
+    description: |
+      Cloud Custodian Lambda Runtime Audit
+    comments: |
+      Retrieve list of all Lambdas
+    filters:
+      - or:
+        - "tag:Audit": absent
+        - "tag:Audit": empty
+        - type: value
+          key: Runtime
+          op: regex
+          value: ".*"
+
+  - name: lambda-filter-policy
+    resource: lambda 
+    description: |
+      Retrieve list of Lambda functions that match regex.
+    filters:
+      - or:    
+          - "tag:Audit": absent
+          - "tag:Audit": empty
+          - type: value
+            key: FunctionName
+            op: regex
+            value: ".*" 

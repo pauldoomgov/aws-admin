@@ -1,0 +1,158 @@
+### Missing ?
+aws.account
+aws.acm-certificate
+aws.rest-api
+    aws.rest-account
+    aws.rest-resource
+    aws.rest-stage
+    aws.rest-vpclink
+aws.asg
+    aws.launch-config
+aws.backup-plan
+aws.batch-compute
+    aws.batch-definition
+aws.cloud-directory
+aws.cfn
+aws.distribution
+    aws.streaming-distribution
+aws.hsm
+    aws.hsm-client
+    aws.hsm-hapg
+aws.cloudhsm-cluster
+aws.cloudsearch
+aws.cloudtrail
+aws.alarm
+aws.codebuild
+aws.codecommit
+aws.codepipeline
+aws.identity-pool
+    aws.user-pool
+aws.config-recorder
+    aws.config-rule
+aws.datapipeline
+aws.dax
+aws.directconnect
+aws.dlm-policy
+aws.dms-endpoint
+    aws.dms-instance
+aws.directory
+aws.dynamodb-table
+    aws.dynamodb-backup
+    aws.dynamodb-stream
+aws.ami
+aws.ebs
+    aws.ebs-snapshot
+aws.ec2
+    aws.ec2-reserved
+aws.eni
+aws.internet-gateway
+aws.key-pair
+aws.launch-template-version
+aws.nat-gateway
+aws.network-acl
+aws.network-addr
+aws.peering-connection
+aws.route-table
+aws.security-group
+aws.subnet
+aws.transit-attachment
+aws.transit-gateway
+aws.vpc
+aws.vpc-endpoint
+aws.vpn-connection
+aws.vpn-gateway
+aws.ecr
+aws.ecs
+    aws.ecs-container-instance
+    aws.ecs-service
+    aws.ecs-task
+    aws.ecs-task-definition
+aws.efs
+    aws.efs-mount-target
+aws.eks
+aws.cache-cluster
+    aws.cache-snapshot
+    aws.cache-subnet-group
+aws.elasticbeanstalk
+    aws.elasticbeanstalk-environment
+aws.elb
+    aws.app-elb
+    aws.app-elb-target-group
+aws.emr
+aws.elasticsearch
+aws.event-rule
+    aws.event-rule-target
+aws.firehose
+aws.fsx
+    aws.fsx-backup
+aws.gamelift-build
+    aws.gamelift-fleet
+aws.glacier
+    aws.glue-connection
+    aws.glue-crawler
+    aws.glue-database
+    aws.glue-dev-endpoint
+    aws.glue-job
+    aws.glue-table
+aws.health-event
+aws.iam-certificate
+aws.iam-group
+aws.iam-policy
+aws.iam-profile
+aws.iam-role
+aws.iam-user
+aws.iot
+aws.kafka
+aws.kinesis
+    aws.kinesis-analytics
+aws.kms
+    aws.kms-key
+aws.lambda
+    aws.lambda-layer
+aws.lightsail-db
+    aws.lightsail-elb
+    aws.lightsail-instance
+aws.log-group
+aws.ml-model
+aws.message-broker
+aws.opswork-stack
+aws.opswork-cm
+aws.rds
+    aws.rds-cluster
+    aws.rds-cluster-param-group
+    aws.rds-cluster-snapshot
+    aws.rds-param-group
+    aws.rds-reserved
+    aws.rds-snapshot
+    aws.rds-subnet-group
+    aws.rds-subscription
+aws.redshift
+    aws.redshift-snapshot
+    aws.redshift-subnet-group
+aws.healthcheck
+    aws.hostedzone
+    aws.rrset
+aws.r53domain
+aws.s3
+aws.sagemaker-endpoint
+    aws.sagemaker-endpoint-config
+    aws.sagemaker-job
+    aws.sagemaker-model
+    aws.sagemaker-notebook
+    aws.sagemaker-transform-job
+aws.simpledb
+aws.secrets-manager
+aws.shield-attack
+    aws.shield-protection
+aws.snowball
+    aws.snowball-cluster
+aws.sns
+aws.sqs
+aws.ops-item
+    aws.ssm-activation
+    aws.ssm-managed-instance
+    aws.ssm-parameter
+aws.step-machine
+aws.storage-gateway
+aws.waf
+aws.workspaces

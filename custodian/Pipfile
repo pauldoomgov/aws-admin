@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+c7n = "latest"
+c7n-org = "latest"
+
+[requires]
+python_version = "3.7"
+boto3 = "latest"
+requests = "latest"
+
+[scripts]
+setup-lambda = "python ./setup/awslambda.py"
+setup-sns = ""
+setup-ses = ""

@@ -1,0 +1,15 @@
+policies:
+  - name: elastic-search-find-all-domains 
+    resource: elasticsearch 
+    description: |
+      Cloud Custodian Elasticsearch 
+    comments: |
+      Find Elasticsearch Domains and Retrieve Attributes 
+    filters:
+      - or:
+          - "tag:Audit": absent
+          - "tag:Audit": empty
+          - type: value
+            key: Name
+            op: regex
+            value: ".*"

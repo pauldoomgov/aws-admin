@@ -1,0 +1,72 @@
+vars:
+  absent-tags-filter: &absent-tags
+    - "tag:data_class": absent
+    - "tag:owner": absent
+    - "tag:service": absent
+  not-null-tags-filter: &not-null-tags
+    - "tag:data_class": not-null
+    - "tag:owner": not-null
+    - "tag:service": not-null
+  list-of-tags: &list-tags
+    - data_class
+    - owner
+    - service
+
+policies:
+
+- name: ebs-snapshot-tag-compliance-mark
+  resource: aws.ebs-snapshot
+  comment: |
+    Find all ebs-snapshot that are not compliant to tagging policies
+    and tag as such.
+  filters:
+    - "tag:c7n_tag_compliance": absent
+    - or: *absent-tags
+  mode:
+    schedule: "rate(12 hours)"
+    type: periodic
+  actions:
+    - type: copy-related-tag
+      resource: ebs
+      skip_missing: True
+      key: VolumeId
+      tags: *list-tags
+    - type: tag
+      key: c7n_tag_compliance
+      value: 'non-conformant'
+
+- name: ebs-snapshot-tag-compliance-unmark
+  resource: aws.ebs-snapshot
+  comment: |
+    Unmark all ebs-snapshot that are now compliant to tagging policies.
+  filters:
+    - "tag:c7n_tag_compliance": not-null
+    - and: *not-null-tags
+  mode:
+    schedule: "rate(12 hours)"
+    type: periodic
+  actions:
+    - type: remove-tag
+      tags: [c7n_tag_compliance]
+
+- name: ebs-snapshot-tag-compliance-notify
+  resource: aws.ebs-snapshot
+  comment: |
+    Notify on ebs-snapshot that remain non-compliant to tagging policies.
+  filters:
+    - "tag:c7n_tag_compliance": not-null
+    - or: *absent-tags
+  mode:
+    schedule: "rate(24 hours)"
+    type: periodic
+  actions:
+    - type: notify
+      action_desc: |
+        Custodian has tagged ebs-snapshot that are not compliant with tagging
+        requirements. Please correctly tag ebs-snapshot resources.
+      subject: "EBS Snapshot Tag Compliance"
+      to: ["slack"]
+      transport:
+           type: sqs
+           queue: c7nMessageQueue
+      violation_desc: "EBS Snapshot resources must have the required tags."
