@@ -2,11 +2,11 @@ variable "name" {
   type = string
 }
 
-variable "email" {
-  type = string
+variable "budget_param_name" {
+  type        = string
+  description = "Name of the AWS Systems Manager Parameter Store budget, excluding the path"
 }
 
-variable "monthly_limit" {
-  type        = number
-  description = "The budget amount, in dollars"
+variable "email" {
+  type = string
 }

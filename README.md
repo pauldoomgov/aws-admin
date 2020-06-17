@@ -42,3 +42,21 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
+
+## Budgets
+
+Budgets are listed by business unit in two places:
+
+- [The AWS accounts spreadsheet](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=1269506691)
+- AWS Systems Manager Parameter Store
+
+To add a new one:
+
+1. Sign into the payer account
+1. Go to the [Parameter Store](https://console.aws.amazon.com/systems-manager/parameters/?region=us-east-1&tab=Table#list_parameter_filters=Name:BeginsWith:%2Ftts%2Faws-budget)
+1. Create a parameter
+   1. For `Name`, use `/tts/aws-budget/<BUSINESS UNIT>`
+   1. For `Value`, enter the monthly budget as an integer
+1. Mimic [use of the `business_unit` module](terraform/organization.tf)
+
+_Parameter Store is used to keep the values private._
