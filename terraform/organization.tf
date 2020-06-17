@@ -14,37 +14,37 @@ data "aws_organizations_organization" "main" {
 resource "aws_organizations_organizational_unit" "u_18f" {
   provider  = aws.payer
   name      = "18F"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 resource "aws_organizations_organizational_unit" "cloud_gov" {
   provider  = aws.payer
   name      = "cloud.gov"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 resource "aws_organizations_organizational_unit" "coe" {
   provider  = aws.payer
   name      = "COE"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 resource "aws_organizations_organizational_unit" "login_gov" {
   provider  = aws.payer
   name      = "login.gov"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 resource "aws_organizations_organizational_unit" "opp" {
   provider  = aws.payer
   name      = "OPP"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 module "tech_portfolio" {
   source = "./business_unit"
   providers = {
-    aws = "aws.payer"
+    aws = aws.payer
   }
 
   name          = "Tech Portfolio"

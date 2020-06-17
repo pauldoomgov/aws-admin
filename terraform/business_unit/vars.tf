@@ -1,9 +1,9 @@
 variable "name" {
-  type = "string"
+  type = string
 }
 
 variable "email" {
-  type = "string"
+  type = string
 }
 
 variable "monthly_limit" {
