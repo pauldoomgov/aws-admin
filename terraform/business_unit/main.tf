@@ -11,6 +11,7 @@ data "aws_ssm_parameter" "monthly_limit" {
 
 locals {
   tech_portfolio_email = "devops@gsa.gov"
+  notification_emails  = distinct([local.tech_portfolio_email, var.email])
 }
 
 resource "aws_budgets_budget" "bu" {
@@ -33,7 +34,7 @@ resource "aws_budgets_budget" "bu" {
     threshold                  = 95
     threshold_type             = "PERCENTAGE"
     notification_type          = "FORECASTED"
-    subscriber_email_addresses = [local.tech_portfolio_email, var.email]
+    subscriber_email_addresses = local.notification_emails
   }
 
   notification {
@@ -41,7 +42,7 @@ resource "aws_budgets_budget" "bu" {
     threshold                  = 100
     threshold_type             = "PERCENTAGE"
     notification_type          = "FORECASTED"
-    subscriber_email_addresses = [local.tech_portfolio_email, var.email]
+    subscriber_email_addresses = local.notification_emails
   }
 
   notification {
@@ -49,6 +50,6 @@ resource "aws_budgets_budget" "bu" {
     threshold                  = 95
     threshold_type             = "PERCENTAGE"
     notification_type          = "ACTUAL"
-    subscriber_email_addresses = [local.tech_portfolio_email, var.email]
+    subscriber_email_addresses = local.notification_emails
   }
 }
