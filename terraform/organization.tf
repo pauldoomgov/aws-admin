@@ -47,7 +47,7 @@ module "tech_portfolio" {
     aws = aws.payer
   }
 
-  name          = "Tech Portfolio"
-  email         = "devops@gsa.gov"
-  monthly_limit = 2000
+  name              = "Tech Portfolio"
+  budget_param_name = "tech-portfolio"
+  email             = "devops@gsa.gov"
 }
