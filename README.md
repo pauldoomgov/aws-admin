@@ -56,6 +56,7 @@ To add a new one:
 1. Go to the [Parameter Store](https://console.aws.amazon.com/systems-manager/parameters/?region=us-east-1&tab=Table#list_parameter_filters=Name:BeginsWith:%2Ftts%2Faws-budget)
 1. Create a parameter
    1. For `Name`, use `/tts/aws-budget/<BUSINESS UNIT>`
+      - Make `<BUSINESS UNIT>` lower-case, alphanumeric, with hyphens
    1. For `Value`, enter the monthly budget as an integer
 1. Mimic [use of the `business_unit` module](terraform/organization.tf)
 

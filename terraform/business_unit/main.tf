@@ -6,7 +6,7 @@ resource "aws_organizations_organizational_unit" "bu" {
 }
 
 data "aws_ssm_parameter" "monthly_limit" {
-  name = "/tts/aws-budget/${var.budget_param_name}"
+  name = "/tts/aws-budget/${var.name}"
 }
 
 locals {
@@ -24,7 +24,7 @@ resource "aws_budgets_budget" "bu" {
   time_unit         = "MONTHLY"
 
   cost_filters = {
-    CostCategory = join("$", ["Business Units", coalesce(var.cost_category_name, var.name)])
+    CostCategory = join("$", ["Business Units", var.name])
   }
 
   notification {

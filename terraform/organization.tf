@@ -17,9 +17,8 @@ module "u_18f" {
     aws = aws.payer
   }
 
-  name              = "18F"
-  budget_param_name = "18f"
-  email             = "devops@gsa.gov"
+  name  = "18f"
+  email = "devops@gsa.gov"
 }
 
 module "cloud_gov" {
@@ -28,10 +27,8 @@ module "cloud_gov" {
     aws = aws.payer
   }
 
-  name               = "cloud.gov"
-  budget_param_name  = "cloud.gov"
-  cost_category_name = "cloud-gov"
-  email              = "support@cloud.gov"
+  name  = "cloud-gov"
+  email = "support@cloud.gov"
 }
 
 module "coe" {
@@ -40,9 +37,8 @@ module "coe" {
     aws = aws.payer
   }
 
-  name              = "Centers of Excellence"
-  budget_param_name = "coe"
-  email             = "connectcoe@gsa.gov"
+  name  = "coe"
+  email = "connectcoe@gsa.gov"
 }
 
 module "login_gov" {
@@ -51,10 +47,8 @@ module "login_gov" {
     aws = aws.payer
   }
 
-  name               = "login.gov"
-  budget_param_name  = "login.gov"
-  cost_category_name = "login-gov"
-  email              = "security-team@login.gov"
+  name  = "login-gov"
+  email = "security-team@login.gov"
 }
 
 module "solutions" {
@@ -63,9 +57,8 @@ module "solutions" {
     aws = aws.payer
   }
 
-  name              = "Solutions"
-  budget_param_name = "solutions"
-  email             = "devops@gsa.gov"
+  name  = "solutions"
+  email = "devops@gsa.gov"
 }
 
 module "tech_portfolio" {
@@ -74,7 +67,6 @@ module "tech_portfolio" {
     aws = aws.payer
   }
 
-  name              = "Tech Portfolio"
-  budget_param_name = "tech-portfolio"
-  email             = "devops@gsa.gov"
+  name  = "tech-portfolio"
+  email = "devops@gsa.gov"
 }
