@@ -28,9 +28,10 @@ module "cloud_gov" {
     aws = aws.payer
   }
 
-  name              = "cloud.gov"
-  budget_param_name = "cloud.gov"
-  email             = "support@cloud.gov"
+  name               = "cloud.gov"
+  budget_param_name  = "cloud.gov"
+  cost_category_name = "cloud-gov"
+  email              = "support@cloud.gov"
 }
 
 module "coe" {
@@ -50,9 +51,10 @@ module "login_gov" {
     aws = aws.payer
   }
 
-  name              = "login.gov"
-  budget_param_name = "login.gov"
-  email             = "security-team@login.gov"
+  name               = "login.gov"
+  budget_param_name  = "login.gov"
+  cost_category_name = "login-gov"
+  email              = "security-team@login.gov"
 }
 
 module "solutions" {
