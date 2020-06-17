@@ -2,7 +2,7 @@ data "aws_organizations_organization" "main" {}
 
 resource "aws_organizations_organizational_unit" "bu" {
   name      = var.name
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  parent_id = data.aws_organizations_organization.main.roots.0.id
 }
 
 locals {
