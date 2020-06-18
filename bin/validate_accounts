@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Confirm that all accounts in the Organization are in the Business Units Cost Category. Requires AWS CLI and jq.
+#
+# Note this script needs to be run against the payer account—suggest using AWS_PROFILE.
+
+set -e
+
+ALL_ACCOUNTS=$(aws organizations list-accounts | \
+  jq -r '.Accounts | .[] | .Id' | sort)
+
+COST_CATEGORY="arn:aws:ce::810504390172:costcategory/ecbaee64-9b52-4893-b173-2056f26ad0e9"
+COST_CATEGORY_ACCOUNTS=$(aws ce \
+  describe-cost-category-definition \
+  --cost-category-arn "$COST_CATEGORY" | \
+  jq -r '[.CostCategory.Rules | .[] | .Rule.Dimensions.Values] | flatten | sort | .[]')
+
+diff <(echo "$ALL_ACCOUNTS") <(echo "$COST_CATEGORY_ACCOUNTS")
+RV=$?
+if [[ $RV == 1 ]]
+then
+  echo ""
+  echo "Sign in to the payer account and add the accounts above to https://console.aws.amazon.com/billing/home?region=us-east-1#/costcategories/costcategory/arn%3Aaws%3Ace%3A%3A810504390172%3Acostcategory%2Fecbaee64-9b52-4893-b173-2056f26ad0e9/edit"
+  exit 1
+else
+  echo "All accounts are present in the Cost Category. No action necessary."
+fi
