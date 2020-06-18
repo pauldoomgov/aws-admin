@@ -6,7 +6,7 @@ resource "aws_organizations_organizational_unit" "bu" {
 }
 
 data "aws_ssm_parameter" "monthly_limit" {
-  name = "/tts/aws-budget/${var.budget_param_name}"
+  name = "/tts/aws-budget/${var.name}"
 }
 
 locals {
@@ -25,8 +25,7 @@ resource "aws_budgets_budget" "bu" {
   time_unit         = "MONTHLY"
 
   cost_filters = {
-    # https://github.com/terraform-providers/terraform-provider-aws/issues/5890#issuecomment-485600055
-    LinkedAccount = join(",", [for acct in aws_organizations_organizational_unit.bu.accounts : acct.id])
+    CostCategory = join("$", ["Business Units", var.name])
   }
 
   notification {
