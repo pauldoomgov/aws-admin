@@ -31,6 +31,24 @@ module "cloud_gov" {
   email = "support@cloud.gov"
 }
 
+resource "aws_organizations_account" "cloud_gov_master" {
+  provider = aws.payer
+
+  name  = "tts-cloudgov-master"
+  email = "devops+aws-cloudgov-master@gsa.gov"
+  iam_user_access_to_billing = "ALLOW"
+  parent_id = module.cloud_gov.org_unit_id
+}
+
+resource "aws_organizations_account" "cloud_gov_sandbox" {
+  provider = aws.payer
+
+  name  = "tts-cloudgov-sandbox"
+  email = "devops+aws-cloudgov-sandbox@gsa.gov"
+  iam_user_access_to_billing = "ALLOW"
+  parent_id = module.cloud_gov.org_unit_id
+}
+
 module "coe" {
   source = "./business_unit"
   providers = {
