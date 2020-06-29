@@ -33,6 +33,9 @@ assignees: ""
    1. [ ] Set a `Role name` of `CrossAccountAdmin`.
    1. [ ] Create it.
    1. [ ] Mark a `Y` in the `Role switching enabled?` column of [the AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
+1. [ ] Set up budgeting
+   1. [ ] Sign into payer account
+   1. [ ] Add to [Cost Category](https://console.aws.amazon.com/billing/home#/costcategories)
 1. [ ] Set up IAM
    1. [ ] [Create a group](https://console.aws.amazon.com/iam/home#/groups) called `Administrators`
    1. [ ] Attach the `AdministratorAccess` policy to that group
