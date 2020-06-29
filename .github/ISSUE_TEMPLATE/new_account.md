@@ -17,7 +17,7 @@ assignees: ""
 ## Checklist for admins
 
 1. [ ] [Confirm they are paying into the existing contract](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=1269506691)
-1. [ ] [Create an account](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html#orgs_manage_accounts_create-new) using email `devops+aws-<program>-<env>@gsa.gov`
+1. [ ] Create an account using the [`account`](https://github.com/18F/aws-admin/tree/master/terraform/account) module
 1. [ ] Set up root user
    1. [ ] [Sign in as the root user](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_access-as-root)
    1. [ ] [Change account email](https://console.aws.amazon.com/billing/home#/account) to `devops+aws-<account number>@gsa.gov`

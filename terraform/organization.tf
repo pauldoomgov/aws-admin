@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 
   assume_role {
-    role_arn = "arn:aws:iam::810504390172:role/CrossAccountAdmin"
+    role_arn = "arn:aws:iam::810504390172:role/${var.role_name}"
   }
 }
 
@@ -19,34 +19,6 @@ module "u_18f" {
 
   name  = "18f"
   email = "devops@gsa.gov"
-}
-
-module "cloud_gov" {
-  source = "./business_unit"
-  providers = {
-    aws = aws.payer
-  }
-
-  name  = "cloud-gov"
-  email = "support@cloud.gov"
-}
-
-resource "aws_organizations_account" "cloud_gov_master" {
-  provider = aws.payer
-
-  name  = "tts-cloudgov-master"
-  email = "devops+aws-cloudgov-master@gsa.gov"
-  iam_user_access_to_billing = "ALLOW"
-  parent_id = module.cloud_gov.org_unit_id
-}
-
-resource "aws_organizations_account" "cloud_gov_sandbox" {
-  provider = aws.payer
-
-  name  = "tts-cloudgov-sandbox"
-  email = "devops+aws-cloudgov-sandbox@gsa.gov"
-  iam_user_access_to_billing = "ALLOW"
-  parent_id = module.cloud_gov.org_unit_id
 }
 
 module "coe" {
