@@ -1,3 +1,3 @@
-output "admin_group_name" {
-  value = aws_iam_group.admins.name
+output "account_id" {
+  value = aws_organizations_account.account.id
 }

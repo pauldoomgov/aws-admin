@@ -14,8 +14,14 @@ module "cloud_gov_jump" {
     aws = aws.payer
   }
 
-  name                    = "tts-cloudgov-jump"
-  org_unit_id             = module.cloud_gov.org_unit_id
+  name        = "tts-cloudgov-jump"
+  org_unit_id = module.cloud_gov.org_unit_id
+}
+
+module "cloud_gov_jump_setup" {
+  source = "./account_setup"
+
+  account_id              = module.cloud_gov_jump.account_id
   cross_account_role_name = var.role_name
 }
 
@@ -25,7 +31,13 @@ module "cloud_gov_sandbox" {
     aws = aws.payer
   }
 
-  name                    = "tts-cloudgov-sandbox"
-  org_unit_id             = module.cloud_gov.org_unit_id
+  name        = "tts-cloudgov-sandbox"
+  org_unit_id = module.cloud_gov.org_unit_id
+}
+
+module "cloud_gov_sandbox_setup" {
+  source = "./account_setup"
+
+  account_id              = module.cloud_gov_sandbox.account_id
   cross_account_role_name = var.role_name
 }
