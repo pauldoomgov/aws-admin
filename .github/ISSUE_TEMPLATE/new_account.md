@@ -18,9 +18,9 @@ assignees: ""
 
 1. [ ] [Confirm they are paying into the existing contract](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=1269506691)
 1. [ ] Create an account using the [`account`](https://github.com/18F/aws-admin/tree/master/terraform/account) module
+1. [ ] Add to [account spreadsheet](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 1. [ ] Set up root user
    1. [ ] [Sign in as the root user](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_access-as-root)
-   1. [ ] [Change account email](https://console.aws.amazon.com/billing/home#/account) to `devops+aws-<account number>@gsa.gov`
    1. [ ] [Set up MFA](https://console.aws.amazon.com/iam/home?#/security_credentials)
    1. [ ] [Add to KeePass](https://drive.google.com/drive/folders/1iQnvC8o_MU_DR5u7TYtC9pEKZXtBq03f?usp=sharing) and re-upload database
 1. [ ] Set the [program team mailing list](https://docs.google.com/spreadsheets/d/12pfcEIEXaJTjIKex-3wnI89erIvgKf9B_XpGkDl6qsM/edit#gid=1235102795) as the [Operations Contact](https://console.aws.amazon.com/billing/home?#/account)
