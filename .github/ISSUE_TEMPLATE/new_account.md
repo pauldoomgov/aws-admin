@@ -42,5 +42,6 @@ assignees: ""
 1. [ ] Set up IAM
    1. [ ] Configure the account using the [`account_setup`](https://github.com/18F/aws-admin/tree/master/terraform/account_setup) module
    1. [ ] Sign into the new account using the [`Switch role URL`](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
-   1. [ ] Create an IAM user in the `Administrators` group for the requester
+   1. [ ] [Create an IAM user](https://console.aws.amazon.com/iam/home#/users$new?step=details) in the `Administrators` group for the requester
    1. [ ] Send them the temporary password via Google Hangouts
+   1. [ ] Have the requester confirm they set up MFA
