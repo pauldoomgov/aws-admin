@@ -26,19 +26,28 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 
 **Source account: `133032889584`**
 
-### Adding a new destination account
-
-1. [Log in](https://console.aws.amazon.com/console/home) to the destination account.
-1. [Create a role for "another AWS account"](https://console.aws.amazon.com/iam/home#/roles$new?step=type&roleType=crossAccount). For the `Account ID`, enter `133032889584`.
-1. Select the [`AdministratorAccess`](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html#jf_administrator) policy.
-1. Add a tag of `Project`: `https://github.com/18F/aws-admin`.
-1. Set a `Role name` of `CrossAccountAdmin`.
-1. Create it.
-1. Mark a `Y` in the `Role switching enabled?` column of [the AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
-
 ### Signing in to destination accounts
 
 1. [Log in to the source account using IAM](https://133032889584.signin.aws.amazon.com/console)
 1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
+
+## Budgets
+
+Budgets are listed by business unit in two places:
+
+- [The AWS accounts spreadsheet](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=1269506691)
+- AWS Systems Manager Parameter Store
+
+To add a new one:
+
+1. Sign into the payer account
+1. Go to the [Parameter Store](https://console.aws.amazon.com/systems-manager/parameters/?region=us-east-1&tab=Table#list_parameter_filters=Name:BeginsWith:%2Ftts%2Faws-budget)
+1. Create a parameter
+   1. For `Name`, use `/tts/aws-budget/<BUSINESS UNIT>`
+      - Make `<BUSINESS UNIT>` lower-case, alphanumeric, with hyphens
+   1. For `Value`, enter the monthly budget as an integer
+1. Mimic [use of the `business_unit` module](terraform/organization.tf)
+
+_Parameter Store is used to keep the values private._

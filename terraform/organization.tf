@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 
   assume_role {
-    role_arn = "arn:aws:iam::810504390172:role/CrossAccountAdmin"
+    role_arn = "arn:aws:iam::810504390172:role/${var.role_name}"
   }
 }
 
@@ -11,43 +11,52 @@ data "aws_organizations_organization" "main" {
   provider = aws.payer
 }
 
-resource "aws_organizations_organizational_unit" "u_18f" {
-  provider  = aws.payer
-  name      = "18F"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+module "u_18f" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
+
+  name  = "18f"
+  email = "devops@gsa.gov"
 }
 
-resource "aws_organizations_organizational_unit" "cloud_gov" {
-  provider  = aws.payer
-  name      = "cloud.gov"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+module "coe" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
+
+  name  = "coe"
+  email = "connectcoe@gsa.gov"
 }
 
-resource "aws_organizations_organizational_unit" "coe" {
-  provider  = aws.payer
-  name      = "COE"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+module "login_gov" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
+
+  name  = "login-gov"
+  email = "security-team@login.gov"
 }
 
-resource "aws_organizations_organizational_unit" "login_gov" {
-  provider  = aws.payer
-  name      = "login.gov"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
-}
+module "solutions" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
 
-resource "aws_organizations_organizational_unit" "opp" {
-  provider  = aws.payer
-  name      = "OPP"
-  parent_id = "${data.aws_organizations_organization.main.roots.0.id}"
+  name  = "solutions"
+  email = "devops@gsa.gov"
 }
 
 module "tech_portfolio" {
   source = "./business_unit"
   providers = {
-    aws = "aws.payer"
+    aws = aws.payer
   }
 
-  name          = "Tech Portfolio"
-  email         = "devops@gsa.gov"
-  monthly_limit = 2000
+  name  = "tech-portfolio"
+  email = "devops@gsa.gov"
 }

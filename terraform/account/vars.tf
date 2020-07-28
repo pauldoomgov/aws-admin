@@ -2,6 +2,6 @@ variable "name" {
   type = string
 }
 
-variable "email" {
+variable "org_unit_id" {
   type = string
 }

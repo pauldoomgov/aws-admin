@@ -1,4 +1,6 @@
 terraform {
+  required_version = "~> 0.12.0"
+
   backend "s3" {
     # needs to match bootstrap module
     bucket         = "tts-aws-admin"
@@ -28,10 +30,10 @@ data "aws_iam_policy_document" "cross_account" {
 
 resource "aws_iam_policy" "assume_role" {
   name   = "allow-assume-cross-account-role"
-  policy = "${data.aws_iam_policy_document.cross_account.json}"
+  policy = data.aws_iam_policy_document.cross_account.json
 }
 
 resource "aws_iam_group_policy_attachment" "assume_role" {
-  group      = "${aws_iam_group.admins.name}"
-  policy_arn = "${aws_iam_policy.assume_role.arn}"
+  group      = aws_iam_group.admins.name
+  policy_arn = aws_iam_policy.assume_role.arn
 }
