@@ -19,3 +19,16 @@ resource "aws_iam_group_policy_attachment" "admin" {
   group      = aws_iam_group.admins.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
+
+resource "aws_iam_group" "securityaudit_group" {
+  provider = aws.child
+
+  name = "securityaudit"
+}
+
+resource "aws_iam_group_policy_attachment" "securityaudit" {
+  provider = aws.child
+
+  group      = aws_iam_group.securityaudit_group.name
+  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+}
