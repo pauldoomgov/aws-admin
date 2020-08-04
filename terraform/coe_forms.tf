@@ -1,50 +1,50 @@
-module "coe_forms_dev" {
+module "tts_faas_dev" {
   source = "./account"
   providers = {
     aws = aws.payer
   }
 
-  name        = "tts-coe-forms-dev"
+  name        = "tts-faas-dev"
   org_unit_id = module.solutions.org_unit_id
 }
 
-module "coe_forms_dev_setup" {
+module "tts_faas_dev_setup" {
   source = "./account_setup"
 
-  account_id              = module.coe_forms_dev.account_id
+  account_id              = module.tts_faas_dev.account_id
   cross_account_role_name = var.role_name
 }
 
-module "coe_forms_test" {
+module "tts_faas_test" {
   source = "./account"
   providers = {
     aws = aws.payer
   }
 
-  name        = "tts-coe-forms-test"
+  name        = "tts-faas-test"
   org_unit_id = module.solutions.org_unit_id
 }
 
-module "coe_forms_test_setup" {
+module "tts_faas_test_setup" {
   source = "./account_setup"
 
-  account_id              = module.coe_forms_test.account_id
+  account_id              = module.tts_faas_test.account_id
   cross_account_role_name = var.role_name
 }
 
-module "coe_forms_prod" {
+module "tts_faas_prod" {
   source = "./account"
   providers = {
     aws = aws.payer
   }
 
-  name        = "tts-coe-forms-prod"
+  name        = "tts-faas-prod"
   org_unit_id = module.solutions.org_unit_id
 }
 
-module "coe_forms_prod_setup" {
+module "tts_faas_prod_setup" {
   source = "./account_setup"
 
-  account_id              = module.coe_forms_prod.account_id
+  account_id              = module.tts_faas_prod.account_id
   cross_account_role_name = var.role_name
 }
