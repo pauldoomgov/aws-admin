@@ -1,0 +1,402 @@
+---
+accounts:
+
+- account_id: '810504390172'
+  name: 'FPT202 GSA TTS Payer'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::810504390172:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:aws_fpt202@4points.com
+  - program:TTS
+  - budget:TTS
+
+- account_id: '001907687576'
+  name: tts-sandbox
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::001907687576:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-001907687576@gsa.gov
+  - program:18F
+  - budget:TTS
+
+- account_id: '096224847349'
+  name: 'cloud.gov (3)'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::096224847349:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:096224847349@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov
+
+- account_id: '312530187933'
+  name: 'tts-cloudgov-federalist'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::312530187933:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-312530187933@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov
+
+- account_id: '560284223511'
+  name: 'cloud.gov (2)'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::560284223511:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:560284223511@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov
+
+- account_id: '699351240001'
+  name: 'aws-gsa-18f-cloud-gov'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::699351240001:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-699351240001@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov
+
+- account_id: '533787958253'
+  name: 'coe-innovation-lab'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::533787958253:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-coe-innovation-lab@gsa.gov
+  - program:coe.gsa.gov
+  - budget:coe
+
+- account_id: '034795980528'
+  name: 'login.gov identity-interviews'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::034795980528:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-034795980528@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '035466892286'
+  name: 'login.gov SMS Sandbox'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::035466892286:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-035466892286@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '340731855345'
+  name: 'login.gov IAM hub / master'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::035466892286:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-340731855345@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '461353137281'
+  name: '18f-identity-analytics-prod'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::461353137281:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-461353137281@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '472911866628'
+  name: 'login.gov SMS Production'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::461353137281:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-472911866628@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '555546682965'
+  name: 'login.gov prod'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::555546682965:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-555546682965@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '894947205914'
+  name: 'login.gov dev'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::894947205914:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:admin+aws-894947205914@login.gov
+  - program:login.gov
+  - budget:login.gov
+
+- account_id: '195022191070'
+  name: 'api-data-gov'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::195022191070:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-195022191070@gsa.gov	
+  - program:api.data.gov
+  - budget:solutions  
+
+- account_id: '213305845712'
+  name: 'search.gov'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::213305845712:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-213305845712@gsa.gov	
+  - program:search.gov
+  - budget:solutions
+
+- account_id: '587807691409'
+  name: 'data.gov'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::587807691409:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-587807691409@gsa.gov
+  - program:data.gov
+  - budget:solutions
+
+- account_id: '765358534566'
+  name: 'OPP Prod'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::765358534566:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-765358534566@gsa.gov
+  - program:solutions
+  - budget:solutions
+
+- account_id: '133032889584'
+  name: 'tts-prod'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::133032889584:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-133032889584@gsa.gov
+  - program:TTS
+  - budget:TTS
+
+- account_id: '144433228153'
+  name: '18F Enterprise'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::144433228153:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-144433228153@gsa.gov
+  - program:18F
+  - budget:TTS  
+
+- account_id: '541873662368'
+  name: 'PIF'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::541873662368:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-541873662368@gsa.gov
+  - program:PIF
+  - budget:TTS  
+
+- account_id: '570696747145'
+  name: '18F Infrastructure Management Account'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::570696747145:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-570696747145@gsa.gov
+  - program:18F
+  - budget:TTS  
+
+- account_id: '756406097870'
+  name: 'tts-cloudgov-jump'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::756406097870:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-756406097870@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov   
+
+- account_id: '559685638163'
+  name: 'tts-cloudgov-sandbox'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::559685638163:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-559685638163@gsa.gov
+  - program:cloud.gov
+  - budget:cloud.gov 
+
+- account_id: '821341638715'
+  name: 'tts-cloudgov-sandbox'
+  regions:
+  - us-east-1
+  - us-west-1
+  - us-central-1
+  - us-east-1
+  - us-west-2
+  - us-central-2
+  role: arn:aws:iam::821341638715:role/CloudCustodian
+  vars:
+  tags:
+  - admin_email:devops+aws-821341638715@gsa.gov
+  - program:data.gov
+  - budget:solutions

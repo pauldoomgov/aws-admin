@@ -1,6 +1,6 @@
-# David Lin's Cloud Custodian Policies 
+## Cloud Custodian Policies 
 
-## Policies in Production
+### in Testing
 
 | Policy | Description |
 |--------|-------------|
@@ -43,12 +43,6 @@
 [get_lambda_runtime_audit.yml](https://github.com/davidclin/cloudcustodian-policies/blob/master/policies/get_lambda_runtime_audit.yml) | Retrieves lambdas based on runtime |
 
 
-## Shell Scripts
-| Script | Description |
-|--------|-------------|
-[report.sh](https://github.com/davidclin/cloudcustodian-policies/blob/master/scripts/report.sh) | Invokes iam-user-tagged-resources-audit.yml then writes reports to file.|
-
-
 ## Policies in Test
 | Policy | Description |
 |--------|-------------|
@@ -73,9 +67,8 @@
 | [delete-marked-sgroups.yml](https://github.com/davidclin/cloudcustodian-policies/blob/master/policies/delete-marked-sgroups.yml) | Unmarks used security groups that were marked for deletion then deletes remaining marked security |
 | [slack-notify.yml](https://github.com/davidclin/cloudcustodian-policies/blob/master/policies/slack-notify.yml) | Slack example |
 
-
-# Cloud Custodian Architecture and AWS Services
-<img src="./images/singlenodedeploy.png" width="550">
+### in Production
+TBD
 
 # Getting Started
 <details>
