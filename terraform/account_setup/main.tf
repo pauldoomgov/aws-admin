@@ -19,31 +19,16 @@ resource "aws_iam_group_policy_attachment" "admin" {
   group      = aws_iam_group.admins.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
-  
-resource "aws_iam_user" "readonly" {
+
+resource "aws_iam_group" "securityaudit_group" {
   provider = aws.child
 
-  name = "readonly"
+  name = "securityaudit"
 }
 
-resource "aws_iam_user_policy" "readonly" {
-  name = "test"
-  user = "${aws_iam_user.readonly.name}"
-
-  policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect    = "Allow",
-        Action    = "sts:AssumeRole",
-        Principal = { "AWS" : "arn:aws:iam::${data.aws_organizations_account.account.id}:${aws_iam_user.readonly.name}" }
-    }]
-  })
-}
-
-resource "aws_iam_user_policy_attachment" "readonly" {
+resource "aws_iam_group_policy_attachment" "securityaudit" {
   provider = aws.child
 
-  user       = "${aws_iam_user.readonly.name}"
+  group      = aws_iam_group.securityaudit_group.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
