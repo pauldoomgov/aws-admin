@@ -10,7 +10,7 @@ terraform {
   }
 }
 
-# source account
+# jump account
 provider "aws" {
   version = "~> 2.32"
   # arbitrary, since most of these resources are global

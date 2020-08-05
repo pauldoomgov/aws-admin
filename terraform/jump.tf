@@ -1,5 +1,6 @@
-# set up cross account access on the source account side
+# set up cross account access on the jump account side
 
+# allow assuming admin role into all accounts in the organization
 data "aws_iam_policy_document" "cross_account" {
   statement {
     actions   = ["sts:AssumeRole"]
