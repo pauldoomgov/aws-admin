@@ -42,7 +42,7 @@ module "cloud_gov_sandbox_setup" {
   cross_account_role_name = var.role_name
 }
 
-module "federaalist" {
+module "federalist" {
   source = "./account"
   providers = {
     aws = aws.payer
