@@ -2,19 +2,21 @@
 
 This repository contains AWS cross-account management for the [Technology Transform Service (TTS)](http://www.gsa.gov/portal/category/25729) and is managed by the [TTS Technology Portfolio](https://handbook.18f.gov/tech-portfolio/) within the [General Services Administration](http://gsa.gov).
 
+**Jump account: `133032889584`**
+
 ## Setup
 
-1. [Set up AWS credentials](https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e) for the AWS account `133032889584`
-1. [Install Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
-1. Clone this repository
-1. Set up Terraform
+1. [Set up AWS credentials](https://blog.gruntwork.io/authenticating-to-aws-with-the-credentials-file-d16c0fbcbf9e) for jump account.
+1. [Install Terraform.](https://learn.hashicorp.com/terraform/getting-started/install.html)
+1. Clone this repository.
+1. Set up Terraform.
 
    ```sh
    cd aws-admin/terraform
    terraform init
    ```
 
-1. Confirm the AWS connection works
+1. Confirm the AWS connection works.
 
    ```sh
    terraform plan
@@ -24,11 +26,9 @@ This repository contains AWS cross-account management for the [Technology Transf
 
 _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)._
 
-**Source account: `133032889584`**
-
 ### Signing in to destination accounts
 
-1. [Log in to the source account using IAM](https://133032889584.signin.aws.amazon.com/console)
+1. [Log in to the jump account using IAM](https://133032889584.signin.aws.amazon.com/console)
 1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
