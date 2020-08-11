@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 
   assume_role {
-    role_arn = "arn:aws:iam::810504390172:role/${var.role_name}"
+    role_arn = "arn:aws:iam::810504390172:role/${local.role_name}"
   }
 }
 
