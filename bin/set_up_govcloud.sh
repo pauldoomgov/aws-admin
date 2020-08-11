@@ -23,8 +23,20 @@ aws iam attach-group-policy --group-name "$GROUP_NAME" --policy-arn arn:aws:iam:
 aws iam create-user --user-name "$USERNAME"
 aws iam add-user-to-group --group-name "$GROUP_NAME" --user-name "$USERNAME"
 
+# turn off echoing
+set +x
+
+# Read Password
+echo -n "Password for new IAM user: "
+read -s PASSWORD
+echo
+
 # Command to add a password to the user:
-aws iam create-login-profile -u "$USERNAME" -p <password>
+aws iam create-login-profile --user-name "$USERNAME" --password "$PASSWORD"
+unset $PASSWORD
+
+# re-enable echoing
+set -x
 
 # Command to Verify that your user was created:
 aws iam list-users
