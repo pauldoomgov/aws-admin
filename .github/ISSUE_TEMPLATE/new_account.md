@@ -27,6 +27,7 @@ assignees: ""
 1. [ ] Set up GovCloud (if applicable)
    1. [ ] Send a request with the account number to govcloud-onboarding@amazon.com and CC cloudteam@4points.com, devops@gsa.gov, and brian.burns@gsa.gov
    1. [ ] Follow instructions from AWS to get credentials
+   1. [ ] Add (provided) GovCloud root account access key and secret to [KeePass](https://drive.google.com/drive/folders/1iQnvC8o_MU_DR5u7TYtC9pEKZXtBq03f?usp=sharing) and re-upload database
    1. [ ] Run the [GovCloud account setup script](https://github.com/18F/aws-admin/blob/master/bin/set_up_govcloud.sh)
    1. [ ] Create user for requester
 1. [ ] Set up cross-account access
