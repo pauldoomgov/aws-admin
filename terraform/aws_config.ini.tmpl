@@ -1,7 +1,0 @@
-[default]
-region = us-east-1
-%{ for account in accounts }
-[profile ${replace(lower(account.name), "/\\W/", "-")}]
-role_arn = arn:aws:iam::${account.id}:role/${role_name}
-source_profile = default
-%{ endfor }
