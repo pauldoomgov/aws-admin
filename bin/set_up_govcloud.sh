@@ -4,8 +4,8 @@ set -e
 set -x
 
 # required environment variables:
-# AWS_ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY
+# AWS_ACCESS_KEY_ID - for the GovCloud account
+# AWS_SECRET_ACCESS_KEY - (ditto)
 # USERNAME (optional - set on system by default)
 
 # based on

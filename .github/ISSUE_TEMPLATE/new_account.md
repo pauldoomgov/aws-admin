@@ -26,7 +26,8 @@ assignees: ""
 1. [ ] Set the [program team mailing list](https://docs.google.com/spreadsheets/d/12pfcEIEXaJTjIKex-3wnI89erIvgKf9B_XpGkDl6qsM/edit#gid=1235102795) as the [Operations Contact](https://console.aws.amazon.com/billing/home?#/account)
 1. [ ] Set up GovCloud (if applicable)
    1. [ ] Send a request with the account number to govcloud-onboarding@amazon.com and CC cloudteam@4points.com, devops@gsa.gov, and brian.burns@gsa.gov
-   1. [ ] Get credentials from AWS
+   1. [ ] Follow instructions from AWS to get credentials
+   1. [ ] Run the [GovCloud account setup script](https://github.com/18F/aws-admin/blob/master/bin/set_up_govcloud.sh)
    1. [ ] Create user for requester
 1. [ ] Set up cross-account access
    1. [ ] [Create a role for "another AWS account"](https://console.aws.amazon.com/iam/home#/roles$new?step=type&roleType=crossAccount). For the `Account ID`, enter `133032889584`.
