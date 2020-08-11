@@ -33,6 +33,25 @@ _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/t
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
 
+### Local setup
+
+Terraform will generate an [AWS config file](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+1. Run the following from this directory (the `-target` part is optional):
+
+   ```sh
+   terraform apply -target=local_file.aws_config
+   ```
+
+1. Copy the config file.
+
+   ```sh
+   mkdir -p ~/.aws
+   cp aws_config.ini ~/.aws/config
+   ```
+
+1. [Use the named profiles with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html#using-profiles) or other tools.
+
 ## Budgets
 
 Budgets are listed by business unit in two places:
