@@ -1,10 +1,14 @@
 # set up cross account access on the jump account side
 
+locals {
+  role_name = "CrossAccountAdmin"
+}
+
 # allow assuming admin role into all accounts in the organization
 data "aws_iam_policy_document" "cross_account" {
   statement {
     actions   = ["sts:AssumeRole"]
-    resources = [for acct in data.aws_organizations_organization.main.accounts : "arn:aws:iam::${acct.id}:role/${var.role_name}"]
+    resources = [for acct in data.aws_organizations_organization.main.accounts : "arn:aws:iam::${acct.id}:role/${local.role_name}"]
   }
 }
 
