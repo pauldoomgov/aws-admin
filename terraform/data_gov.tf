@@ -12,5 +12,5 @@ module "data_gov_ssb_setup" {
   source = "./account_setup"
 
   account_id              = module.data_gov_ssb.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
