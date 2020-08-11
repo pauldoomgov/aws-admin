@@ -26,12 +26,31 @@ This repository contains AWS cross-account management for the [Technology Transf
 
 _Based on [these steps](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)._
 
-### Signing in to destination accounts
+### From the Console
 
 1. [Log in to the jump account using IAM](https://133032889584.signin.aws.amazon.com/console)
 1. Use the `Switch role URL` from the [AWS accounts list](https://docs.google.com/spreadsheets/d/1DedSCiU9AsCAAVvAFZT0_Ii7AFIKlI-JNifzlpHNbDg/edit#gid=0)
 
 [More info.](https://docs.aws.amazon.com/en_pv/IAM/latest/UserGuide/id_roles_use_switch-role-console.html)
+
+### Locally
+
+Terraform will generate an [AWS config file](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+1. Run the following from this directory (the `-target` part is optional):
+
+   ```sh
+   terraform apply -target=local_file.aws_config
+   ```
+
+1. Copy the config file.
+
+   ```sh
+   mkdir -p ~/.aws
+   cp aws_config.ini ~/.aws/config
+   ```
+
+1. [Use the named profiles with the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html#using-profiles) or other tools.
 
 ## Budgets
 
