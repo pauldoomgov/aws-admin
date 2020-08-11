@@ -27,7 +27,7 @@ aws iam add-user-to-group --group-name "$GROUP_NAME" --user-name "$USERNAME"
 set +x
 
 # Read Password
-echo -n "Password for new IAM user: "
+echo -n "Password for new IAM user ($USERNAME): "
 read -s PASSWORD
 echo
 
@@ -40,3 +40,6 @@ set -x
 
 # Command to Verify that your user was created:
 aws iam list-users
+
+GOVCLOUD_ACCOUNT_NUMBER=$(aws sts get-caller-identity --query Account --output text)
+echo "Sign in as $USERNAME at https://$GOVCLOUD_ACCOUNT_NUMBER.signin.amazonaws-us-gov.com/console"
