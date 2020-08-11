@@ -18,6 +18,8 @@ resource "aws_iam_group_policy_attachment" "assume_role" {
   policy_arn = aws_iam_policy.assume_role.arn
 }
 
+# create local config file
+
 data "aws_region" "current" {}
 
 resource "local_file" "aws_config" {
