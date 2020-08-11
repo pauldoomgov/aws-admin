@@ -56,5 +56,5 @@ module "federalist_setup" {
   source = "./account_setup"
 
   account_id              = module.federalist.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
