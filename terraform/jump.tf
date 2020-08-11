@@ -17,3 +17,20 @@ resource "aws_iam_group_policy_attachment" "assume_role" {
   group      = aws_iam_group.admins.name
   policy_arn = aws_iam_policy.assume_role.arn
 }
+
+resource "local_file" "aws_config" {
+  # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html#cli-configure-files-settings
+  # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-role.html
+  content = <<EOT
+[default]
+region = us-east-1
+%{for account in data.aws_organizations_organization.main.accounts}
+[profile ${replace(lower(account.name), "/\\W/", "-")}]
+role_arn = arn:aws:iam::${account.id}:role/${var.role_name}
+source_profile = default
+%{endfor~}
+EOT
+
+  filename        = "${path.module}/aws_config.ini"
+  file_permission = "0600"
+}
