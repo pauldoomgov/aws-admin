@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+set -x
+
+# required environment variables:
+# AWS_ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY
+# USERNAME (optional - set on system by default)
+
+# based on
+# https://govcloudconsolesetup.s3-us-gov-west-1.amazonaws.com/setup.html
+
+export AWS_DEFAULT_REGION=us-gov-west-1
+GROUP_NAME=Administrators
+
+aws iam create-group --group-name "$GROUP_NAME"
+
+# Command to Add a Policy to the group:
+aws iam attach-group-policy --group-name "$GROUP_NAME" --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+
+# Command to create a new user and add them to the group:
+aws iam create-user --user-name "$USERNAME"
+aws iam add-user-to-group --group-name "$GROUP_NAME" --user-name "$USERNAME"
+
+# Command to add a password to the user:
+aws iam create-login-profile -u "$USERNAME" -p <password>
+
+# Command to Verify that your user was created:
+aws iam list-users
