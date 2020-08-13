@@ -22,7 +22,7 @@ module "cloud_gov_jump_setup" {
   source = "./account_setup"
 
   account_id              = module.cloud_gov_jump.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
 
 module "cloud_gov_sandbox" {
@@ -39,5 +39,5 @@ module "cloud_gov_sandbox_setup" {
   source = "./account_setup"
 
   account_id              = module.cloud_gov_sandbox.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
