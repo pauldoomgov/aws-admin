@@ -8,12 +8,12 @@ module "tts_faas_dev" {
   org_unit_id = module.coe.org_unit_id
 }
 
-module "tts_faas_dev_setup" {
-  source = "./account_setup"
-
-  account_id              = module.tts_faas_dev.account_id
-  cross_account_role_name = var.role_name
-}
+#module "tts_faas_dev_setup" {
+#  source = "./account_setup"
+#
+#  account_id              = module.tts_faas_dev.account_id
+#  cross_account_role_name = local.role_name
+#}
 
 module "tts_faas_test" {
   source = "./account"
@@ -29,7 +29,7 @@ module "tts_faas_test_setup" {
   source = "./account_setup"
 
   account_id              = module.tts_faas_test.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
 
 module "tts_faas_prod" {
@@ -46,5 +46,5 @@ module "tts_faas_prod_setup" {
   source = "./account_setup"
 
   account_id              = module.tts_faas_prod.account_id
-  cross_account_role_name = var.role_name
+  cross_account_role_name = local.role_name
 }
