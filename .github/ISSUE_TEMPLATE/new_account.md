@@ -25,7 +25,7 @@ assignees: ""
    1. [ ] [Add to KeePass](https://drive.google.com/drive/folders/1iQnvC8o_MU_DR5u7TYtC9pEKZXtBq03f?usp=sharing) and re-upload database
 1. [ ] Set the [program team mailing list](https://docs.google.com/spreadsheets/d/12pfcEIEXaJTjIKex-3wnI89erIvgKf9B_XpGkDl6qsM/edit#gid=1235102795) as the [Operations Contact](https://console.aws.amazon.com/billing/home?#/account)
 1. [ ] Set up GovCloud (if applicable)
-   1. [ ] Send a request with the account number to govcloud-onboarding@amazon.com and CC cloudteam@4points.com, devops@gsa.gov, and brian.burns@gsa.gov
+   1. [ ] Send a request with the account number to govcloud-onboarding@amazon.com and CC cloudteam@4points.com, devops@gsa.gov, and brian.burns@gsa.gov for [an associated GovCloud account](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/getting-started-sign-up.html) to be created
    1. [ ] Follow instructions from AWS to get credentials
    1. [ ] Add (provided) GovCloud root account access key and secret to [KeePass](https://drive.google.com/drive/folders/1iQnvC8o_MU_DR5u7TYtC9pEKZXtBq03f?usp=sharing) and re-upload database
    1. [ ] Run the [GovCloud account setup script](https://github.com/18F/aws-admin/blob/master/bin/set_up_govcloud.sh)
