@@ -35,7 +35,7 @@ echo
 
 # Command to add a password to the user:
 aws iam create-login-profile --user-name "$USER_NAME" --password "$PASSWORD"
-unset $PASSWORD
+unset PASSWORD
 
 # re-enable echoing
 set -x
