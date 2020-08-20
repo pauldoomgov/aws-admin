@@ -33,7 +33,7 @@ resource "aws_iam_group_policy_attachment" "securityaudit" {
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
 
-resource "aws_iam_role" "role" {
+resource "aws_iam_role" "cloudcustodian" {
   name = "cloudcustodian"
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -48,6 +48,6 @@ resource "aws_iam_role" "role" {
 }
 
 resource "aws_iam_role_policy_attachment" "cloudcustodian" {
-  role       = aws_iam_role.role.name
+  role       = aws_iam_role.cloudcustodian.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
