@@ -12,6 +12,8 @@ set -x
 # https://govcloudconsolesetup.s3-us-gov-west-1.amazonaws.com/setup.html
 
 export AWS_DEFAULT_REGION=us-gov-west-1
+# make the script run without pausing for output
+export AWS_PAGER=""
 GROUP_NAME=Administrators
 
 aws iam create-group --group-name "$GROUP_NAME"
