@@ -30,7 +30,7 @@ set +x
 
 # Read Password
 echo -n "Password for new IAM user ($USER_NAME): "
-read -s PASSWORD
+read -r -s PASSWORD
 echo
 
 # Command to add a password to the user:
