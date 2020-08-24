@@ -33,21 +33,23 @@ resource "aws_iam_group_policy_attachment" "securityaudit" {
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
 
-resource "aws_iam_role" "cloudcustodian" {
-  name = "cloudcustodian"
+resource "aws_iam_role" "securityaudit" {
+  provider = aws.child
+  name = "securityaudit"
   assume_role_policy = jsonencode({
-    Version = "2012-10-17",
-    Statement = [
-      {
-        Effect    = "Allow",
-        Action    = "sts:AssumeRole",
-        Principal = { "AWS" : "arn:aws:iam::${var.account_id}:role/SecurityAudit" }
+    Version = "2012-10-17"
+    Statement = [{
+        Effect    = "Allow"
+        Action    = "sts:AssumeRole"
+        Principal = { 
+          AWS = "arn:aws:iam::133032889584:root" 
+        }
     }]
   })
-  provider = aws.child
 }
 
-resource "aws_iam_role_policy_attachment" "cloudcustodian" {
-  role       = aws_iam_role.cloudcustodian.name
+resource "aws_iam_role_policy_attachment" "securityaudit" {
+  provider = aws.child
+  role       = aws_iam_role.securityaudit.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
