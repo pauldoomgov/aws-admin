@@ -32,3 +32,4 @@ override.tf.json
 # example: *tfplan*
 
 aws_config.ini
+.vscode
