@@ -4,6 +4,10 @@
 #
 #   ./all_profiles.py [subcommand] [args]
 #
+# Useful in conjunction with the config file created by Terraform.
+#
+# https://github.com/18F/aws-admin#locally
+#
 # Example use:
 #
 #   AWS_DEFAULT_REGION=us-gov-west-1 ./all_profiles.py ec2 describe-instances
