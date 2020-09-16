@@ -33,3 +33,5 @@ override.tf.json
 
 */output
 aws_config.ini
+.vscode
+terraform/aws

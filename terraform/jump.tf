@@ -34,7 +34,7 @@ resource "local_file" "aws_config" {
 region = ${data.aws_region.current.name}
 %{for account in data.aws_organizations_organization.main.accounts}
 [profile ${replace(lower(account.name), "/\\W/", "-")}]
-role_arn = arn:aws:iam::${account.id}:role/${var.role_name}
+role_arn = arn:aws:iam::${account.id}:role/${local.role_name}
 source_profile = default
 %{endfor~}
 EOT
