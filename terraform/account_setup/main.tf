@@ -20,36 +20,26 @@ resource "aws_iam_group_policy_attachment" "admin" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
-resource "aws_iam_group" "securityaudit_group" {
-  provider = aws.child
-
-  name = "securityaudit"
-}
-
-resource "aws_iam_group_policy_attachment" "securityaudit" {
-  provider = aws.child
-
-  group      = aws_iam_group.securityaudit_group.name
-  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
-}
-
-resource "aws_iam_role" "securityaudit" {
-  provider = aws.child
-  name = "securityaudit"
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-        Effect    = "Allow"
-        Action    = "sts:AssumeRole"
-        Principal = { 
-          AWS = "arn:aws:iam::133032889584:root" 
+resource "aws_iam_role" "tts_securityaudit_role" {
+  name = "tts_securityaudit_role"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "AWS": "arn:aws:iam::133032889584:root"
+      },
+      "Effect": "Allow",
+      "Sid": "",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
         }
-    }]
-  })
+      }
+    }
+  ]
 }
-
-resource "aws_iam_role_policy_attachment" "securityaudit" {
-  provider = aws.child
-  role       = aws_iam_role.securityaudit.name
-  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+EOF
 }

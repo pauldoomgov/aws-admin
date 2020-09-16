@@ -13,6 +13,5 @@ boto3 = "latest"
 requests = "latest"
 
 [scripts]
-setup-lambda = "python ./setup/awslambda.py"
 setup-sns = ""
 setup-ses = ""
