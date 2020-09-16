@@ -21,6 +21,7 @@ resource "aws_iam_group_policy_attachment" "admin" {
 }
 
 resource "aws_iam_role" "tts_securityaudit_role" {
+  provider = aws.child
   name = "tts_securityaudit_role"
   assume_role_policy = <<EOF
 {
