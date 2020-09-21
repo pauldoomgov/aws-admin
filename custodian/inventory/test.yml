@@ -2,11 +2,9 @@ policies:
   - name: iam-role-filter-policy
     resource: iam-role 
     description: |
-      Retrieve list of IAM roles 
+      Retrieve list of IAM roles
     filters:
       - or:
-          - "tag:Audit": absent
-          - "tag:Audit": empty
           - type: value
             key: Name
             op: regex

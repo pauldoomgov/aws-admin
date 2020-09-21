@@ -33,12 +33,7 @@ resource "aws_iam_role" "tts_securityaudit_role" {
         "AWS": "arn:aws:iam::133032889584:root"
       },
       "Effect": "Allow",
-      "Sid": "",
-      "Condition": {
-        "Bool": {
-          "aws:MultiFactorAuthPresent": "true"
-        }
-      }
+      "Sid": ""
     }
   ]
 }
