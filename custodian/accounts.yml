@@ -6,11 +6,11 @@ accounts:
   email: "aws_fpt202@4points.com"
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::810504390172:role/tts_securityaudit_role
   tags:
   - program:TTS
@@ -21,11 +21,11 @@ accounts:
   email: devops+aws-001907687576@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::001907687576:role/tts_securityaudit_role
   tags:
   - program:18F
@@ -36,11 +36,11 @@ accounts:
   email: 096224847349@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::096224847349:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
@@ -51,11 +51,11 @@ accounts:
   email: devops+aws-312530187933@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::312530187933:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
@@ -66,11 +66,11 @@ accounts:
   email: 560284223511@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::560284223511:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
@@ -96,11 +96,11 @@ accounts:
   email: devops+aws-coe-innovation-lab@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::533787958253:role/tts_securityaudit_role
   tags:
   - program:coe.gsa.gov
@@ -126,11 +126,11 @@ accounts:
   email: admin+aws-035466892286@login.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::035466892286:role/tts_securityaudit_role
   tags:
   - program:login.gov
@@ -141,11 +141,11 @@ accounts:
   email: admin+aws-340731855345@login.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::035466892286:role/tts_securityaudit_role
   tags:
   - program:login.gov
@@ -156,11 +156,11 @@ accounts:
   email: admin+aws-461353137281@login.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::461353137281:role/tts_securityaudit_role
   tags:
   - program:login.gov
@@ -186,11 +186,11 @@ accounts:
   email: admin+aws-555546682965@login.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::555546682965:role/tts_securityaudit_role
   tags:
   - program:login.gov
@@ -201,11 +201,11 @@ accounts:
   email: admin+aws-894947205914@login.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::894947205914:role/tts_securityaudit_role
   tags:
   - program:login.gov
@@ -216,11 +216,11 @@ accounts:
   email: devops+aws-195022191070@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::195022191070:role/tts_securityaudit_role
   tags:
   - program:api.data.gov
@@ -231,11 +231,11 @@ accounts:
   email: devops+aws-213305845712@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::213305845712:role/tts_securityaudit_role
   tags:
   - program:search.gov
@@ -246,11 +246,11 @@ accounts:
   email: devops+aws-587807691409@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::587807691409:role/tts_securityaudit_role
   tags:
   - program:data.gov
@@ -261,11 +261,11 @@ accounts:
   email: devops+aws-765358534566@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::765358534566:role/tts_securityaudit_role
   tags:
   - program:solutions
@@ -276,11 +276,11 @@ accounts:
   email: devops+aws-133032889584@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::133032889584:role/tts_securityaudit_role
   tags:
   - program:TTS
@@ -291,11 +291,11 @@ accounts:
   email: devops+aws-144433228153@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::144433228153:role/tts_securityaudit_role
   tags:
   - program:18F
@@ -306,11 +306,11 @@ accounts:
   email: devops+aws-541873662368@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::541873662368:role/tts_securityaudit_role
   tags:
   - program:PIF
@@ -321,11 +321,11 @@ accounts:
   email: devops+aws-570696747145@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::570696747145:role/tts_securityaudit_role
   tags:
   - program:18F
@@ -336,11 +336,11 @@ accounts:
   email: devops+aws-756406097870@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::756406097870:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
@@ -351,11 +351,11 @@ accounts:
   email: devops+aws-559685638163@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::559685638163:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
@@ -366,11 +366,11 @@ accounts:
   email: devops+aws-821341638715@gsa.gov
   regions:
   - us-east-1
-  - us-west-1
+  - us-east-2
   - us-central-1
-  - us-east-1
+  - us-central-2  
+  - us-west-1
   - us-west-2
-  - us-central-2
   role: arn:aws:iam::821341638715:role/tts_securityaudit_role
   tags:
   - program:data.gov
