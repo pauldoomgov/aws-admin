@@ -44,3 +44,9 @@ resource "aws_iam_role" "tts_securityaudit_role" {
 }
 EOF
 }
+
+resource "aws_iam_role_policy_attachment" "tts_securityaudit_role" {
+  provider = aws.child
+  role       = aws_iam_role.tts_securityaudit_role.name
+  policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
+}

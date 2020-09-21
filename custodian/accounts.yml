@@ -11,7 +11,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::810504390172:role/securityaudit
+  role: arn:aws:iam::810504390172:role/tts_securityaudit_role
   tags:
   - program:TTS
   - budget:TTS
@@ -26,7 +26,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::001907687576:role/securityaudit
+  role: arn:aws:iam::001907687576:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS
@@ -41,7 +41,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::096224847349:role/securityaudit
+  role: arn:aws:iam::096224847349:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov
@@ -56,7 +56,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::312530187933:role/securityaudit
+  role: arn:aws:iam::312530187933:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov
@@ -71,7 +71,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::560284223511:role/securityaudit
+  role: arn:aws:iam::560284223511:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov
@@ -86,7 +86,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::699351240001:role/securityaudit
+  role: arn:aws:iam::699351240001:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov
@@ -101,7 +101,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::533787958253:role/securityaudit
+  role: arn:aws:iam::533787958253:role/tts_securityaudit_role
   tags:
   - program:coe.gsa.gov
   - budget:coe
@@ -116,7 +116,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::034795980528:role/securityaudit
+  role: arn:aws:iam::034795980528:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -131,7 +131,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::035466892286:role/securityaudit
+  role: arn:aws:iam::035466892286:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -146,7 +146,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::035466892286:role/securityaudit
+  role: arn:aws:iam::035466892286:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -161,7 +161,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::461353137281:role/securityaudit
+  role: arn:aws:iam::461353137281:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -176,7 +176,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::461353137281:role/securityaudit
+  role: arn:aws:iam::461353137281:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -191,7 +191,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::555546682965:role/securityaudit
+  role: arn:aws:iam::555546682965:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -206,7 +206,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::894947205914:role/securityaudit
+  role: arn:aws:iam::894947205914:role/tts_securityaudit_role
   tags:
   - program:login.gov
   - budget:login.gov
@@ -221,7 +221,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::195022191070:role/securityaudit
+  role: arn:aws:iam::195022191070:role/tts_securityaudit_role
   tags:
   - program:api.data.gov
   - budget:solutions  
@@ -236,7 +236,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::213305845712:role/securityaudit
+  role: arn:aws:iam::213305845712:role/tts_securityaudit_role
   tags:
   - program:search.gov
   - budget:solutions
@@ -251,7 +251,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::587807691409:role/securityaudit
+  role: arn:aws:iam::587807691409:role/tts_securityaudit_role
   tags:
   - program:data.gov
   - budget:solutions
@@ -266,7 +266,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::765358534566:role/securityaudit
+  role: arn:aws:iam::765358534566:role/tts_securityaudit_role
   tags:
   - program:solutions
   - budget:solutions
@@ -281,7 +281,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::133032889584:role/securityaudit
+  role: arn:aws:iam::133032889584:role/tts_securityaudit_role
   tags:
   - program:TTS
   - budget:TTS
@@ -296,7 +296,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::144433228153:role/securityaudit
+  role: arn:aws:iam::144433228153:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS  
@@ -311,7 +311,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::541873662368:role/securityaudit
+  role: arn:aws:iam::541873662368:role/tts_securityaudit_role
   tags:
   - program:PIF
   - budget:TTS  
@@ -326,7 +326,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::570696747145:role/securityaudit
+  role: arn:aws:iam::570696747145:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS  
@@ -341,7 +341,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::756406097870:role/securityaudit
+  role: arn:aws:iam::756406097870:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov   
@@ -356,7 +356,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::559685638163:role/securityaudit
+  role: arn:aws:iam::559685638163:role/tts_securityaudit_role
   tags:
   - program:cloud.gov
   - budget:cloud.gov 
@@ -371,7 +371,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::821341638715:role/securityaudit
+  role: arn:aws:iam::821341638715:role/tts_securityaudit_role
   tags:
   - program:data.gov
   - budget:solutions

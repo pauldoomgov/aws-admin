@@ -60,10 +60,10 @@ Here you can see the configuration in how we use SQS to send to directly to SLAC
 Cloud custodian requires [python, pip, virtualenv](https://virtualenv.pypa.io/en/stable/installation/) on client machine or [with docker using `docker exec` or `docker run`](https://github.com/capitalone/cloud-custodian/blob/master/Dockerfile) 
 
 ```bash
-$ virtualenv --python=python3 custodian
-$ source custodian/bin/activate
-(custodian) $ pip install c7n aws-cli
-(custodian) $ aws-cli configure
+$ pipenv install
+$ pipenv shell
+(custodian) $ c7n-org run -c accounts.yml -s output -u inventory/alb.yml --dryrun
+```
 
 # Validate the configuration
 $ custodian validate test.yml
