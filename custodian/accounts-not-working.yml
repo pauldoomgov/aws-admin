@@ -1,6 +1,7 @@
 ---
 accounts:
 
+# TTS-wide
 - account_id: '810504390172'
   name: 'FPT202 GSA TTS Payer'
   email: "aws_fpt202@4points.com"
@@ -16,9 +17,9 @@ accounts:
   - program:TTS
   - budget:TTS
 
-- account_id: '001907687576'
-  name: tts-sandbox
-  email: devops+aws-001907687576@gsa.gov
+- account_id: '133032889584'
+  name: 'tts-prod'
+  email: devops+aws-133032889584@gsa.gov
   regions:
   - us-east-1
   - us-east-2
@@ -26,11 +27,121 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::001907687576:role/tts_securityaudit_role
+  role: arn:aws:iam::133032889584:role/tts_securityaudit_role
+  tags:
+  - program:TTS
+  - budget:TTS
+
+- account_id: '144433228153'
+  name: '18F Enterprise'
+  email: devops+aws-144433228153@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::144433228153:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS
 
+- account_id: '570696747145'
+  name: '18F Infrastructure Management Account'
+  email: devops+aws-570696747145@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::570696747145:role/tts_securityaudit_role
+  tags:
+  - program:18F
+  - budget:TTS
+
+- account_id: '765358534566'
+  name: 'OPP Prod'
+  email: devops+aws-765358534566@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::765358534566:role/tts_securityaudit_role
+  tags:
+  - program:solutions
+  - budget:solutions
+
+# api.data.gov
+- account_id: '195022191070'
+  name: 'api-data-gov'
+  email: devops+aws-195022191070@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::195022191070:role/tts_securityaudit_role
+  tags:
+  - program:api.data.gov
+  - budget:solutions  
+
+# search.gov
+- account_id: '213305845712'
+  name: 'search.gov'
+  email: devops+aws-213305845712@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::213305845712:role/tts_securityaudit_role
+  tags:
+  - program:search.gov
+  - budget:solutions
+
+# data.gov
+- account_id: '587807691409'
+  name: 'data.gov'
+  email: devops+aws-587807691409@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::587807691409:role/tts_securityaudit_role
+  tags:
+  - program:data.gov
+  - budget:solutions
+
+# PIF
+- account_id: '541873662368'
+  name: 'PIF'
+  email: devops+aws-541873662368@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::541873662368:role/tts_securityaudit_role
+  tags:
+  - program:PIF
+  - budget:TTS
+
+# cloud.gov
 - account_id: '096224847349'
   name: 'cloud.gov (3)'
   email: 096224847349@gsa.gov
@@ -76,6 +187,7 @@ accounts:
   - program:cloud.gov
   - budget:cloud.gov
 
+# coe.tts.gov
 - account_id: '533787958253'
   name: 'coe-innovation-lab'
   email: devops+aws-coe-innovation-lab@gsa.gov
@@ -91,6 +203,7 @@ accounts:
   - program:coe.gsa.gov
   - budget:coe
 
+# login.gov
 - account_id: '034795980528'
   name: 'login.gov identity-interviews'
   email: admin+aws-034795980528@login.gov
@@ -101,7 +214,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::034795980528:role/tts_securityaudit_role
+  role: arn:aws:iam::034795980528:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -116,7 +229,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::035466892286:role/tts_securityaudit_role
+  role: arn:aws:iam::035466892286:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -131,7 +244,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::035466892286:role/tts_securityaudit_role
+  role: arn:aws:iam::035466892286:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -146,7 +259,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::461353137281:role/tts_securityaudit_role
+  role: arn:aws:iam::461353137281:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -161,7 +274,7 @@ accounts:
   - us-east-1
   - us-west-2
   - us-central-2
-  role: arn:aws:iam::461353137281:role/tts_securityaudit_role
+  role: arn:aws:iam::461353137281:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -176,7 +289,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::555546682965:role/tts_securityaudit_role
+  role: arn:aws:iam::555546682965:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
@@ -191,127 +304,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::894947205914:role/tts_securityaudit_role
+  role: arn:aws:iam::894947205914:role/Auditor
   tags:
   - program:login.gov
   - budget:login.gov
-
-- account_id: '195022191070'
-  name: 'api-data-gov'
-  email: devops+aws-195022191070@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::195022191070:role/tts_securityaudit_role
-  tags:
-  - program:api.data.gov
-  - budget:solutions  
-
-- account_id: '213305845712'
-  name: 'search.gov'
-  email: devops+aws-213305845712@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::213305845712:role/tts_securityaudit_role
-  tags:
-  - program:search.gov
-  - budget:solutions
-
-- account_id: '587807691409'
-  name: 'data.gov'
-  email: devops+aws-587807691409@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::587807691409:role/tts_securityaudit_role
-  tags:
-  - program:data.gov
-  - budget:solutions
-
-- account_id: '765358534566'
-  name: 'OPP Prod'
-  email: devops+aws-765358534566@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::765358534566:role/tts_securityaudit_role
-  tags:
-  - program:solutions
-  - budget:solutions
-
-- account_id: '133032889584'
-  name: 'tts-prod'
-  email: devops+aws-133032889584@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::133032889584:role/tts_securityaudit_role
-  tags:
-  - program:TTS
-  - budget:TTS
-
-- account_id: '144433228153'
-  name: '18F Enterprise'
-  email: devops+aws-144433228153@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::144433228153:role/tts_securityaudit_role
-  tags:
-  - program:18F
-  - budget:TTS  
-
-- account_id: '541873662368'
-  name: 'PIF'
-  email: devops+aws-541873662368@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::541873662368:role/tts_securityaudit_role
-  tags:
-  - program:PIF
-  - budget:TTS  
-
-- account_id: '570696747145'
-  name: '18F Infrastructure Management Account'
-  email: devops+aws-570696747145@gsa.gov
-  regions:
-  - us-east-1
-  - us-east-2
-  - us-central-1
-  - us-central-2  
-  - us-west-1
-  - us-west-2
-  role: arn:aws:iam::570696747145:role/tts_securityaudit_role
-  tags:
-  - program:18F
-  - budget:TTS

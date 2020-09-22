@@ -59,4 +59,4 @@ accounts:
   role: arn:aws:iam::821341638715:role/tts_securityaudit_role
   tags:
   - program:TTS
-  - budget:TTS  
+  - budget:TTS

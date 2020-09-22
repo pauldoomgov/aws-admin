@@ -1,16 +1,11 @@
-# Cloud Custodian rules
-A repo containing rule sets for cloud-custodian inside GSA AWS accounts. This repo does not contain cloud-custodian itself.
+# Cloud Custodian
+A repo containing rule sets for cloud-custodian inside GSA TTS AWS accounts. This repo does not contain cloud-custodian itself.
 
 ## What is this
-Cloud Custodian is a tool that unifies the dozens of tools and scripts most organizations use for managing their AWS
-accounts into one open source tool. It’s a stateless rules engine for policy definition and enforcement, with metrics and reporting for AWS.
+Cloud Custodian is a tool that unifies the dozens of tools and scripts most organizations use for managing their AWS accounts into one open source tool. It’s a stateless rules engine for policy definition and enforcement, with metrics and reporting for AWS.
 
 http://www.capitalone.io/cloud-custodian/docs/
 https://github.com/capitalone/cloud-custodian
-
-## Whats here
-see `/policies/operational` for rules that take actions (i.e. stop/start instances, block creation of non-compliant resources, automate encryption/backups)
-see `/policies/compliance` for rules that verify compliance (i.e. users w/ console access have MFA enabled, resources are tag appropriate, check that encryption/backups are configured)
 
 ## Use Cases
 <details>
@@ -35,13 +30,10 @@ see `/policies/compliance` for rules that verify compliance (i.e. users w/ conso
 * Verifies MFA Token has been applied to Root user
 * Verifies proper IAM password policy is enforced for users
 
-
 ### Variables
-
 There are several variables that are capitalized throughout, some include `MESSAGEQUEUENAME, BUCKETNAME, and REQUIREDTAGS` These should be substituted and variablized to your environment needs.
 
 ### Custodian Logging/Metrics
-
 `execution-options:output_dir: s3://BUCKETNAME/CustodianLogs/{account_id}/`
 This specific option is used to send the cusotdian run log and resources log to an s3 bucket. The data in the s3 bucket may be ingested by SIEM or other tools for customized metrics and data visualization.
 
@@ -51,31 +43,21 @@ Note, there are other ways to ingest these files that can be found in the `custo
 `to: ["slack"]`
 Here you can see the configuration in how we use SQS to send to directly to SLACK. This actually sends the content of the "resources.json.gz" file directly into a slack channel. This option requires you to create a message queue that is used by the Custodian to send to slack. We speak more about the logs/metrics file contents in our blog post below.
 
-
 </details>
 ## Getting Started
 <details>
 <summary>Quick Install</summary>
 
-Cloud custodian requires [python, pip, virtualenv](https://virtualenv.pypa.io/en/stable/installation/) on client machine or [with docker using `docker exec` or `docker run`](https://github.com/capitalone/cloud-custodian/blob/master/Dockerfile) 
+Cloud custodian requires [python3, pipenv](https://github.com/pypa/pipenv) be installed on your client machine or [with docker using `docker exec` or `docker run`](https://github.com/capitalone/cloud-custodian/blob/master/Dockerfile) 
+
+From root directory `$ cd custodian`
 
 ```bash
+$ brew install pipenv
 $ pipenv install
 $ pipenv shell
-(custodian) $ c7n-org run -c accounts.yml -s output -u inventory/alb.yml --dryrun
+(custodian) $ c7n-org run -c accounts.yml -s output -u inventory/test.yml --dryrun
 ```
-
-# Validate the configuration
-$ custodian validate test.yml
-
-# Perform a dryrun on the policies (no actions executed) to see what would change
-$ custodian run --dryrun -s out test.yml
-
-# Run the policy
-$ custodian run -s out some/policy.yml
-```
-
->Note - you can create an IAM user/roles with using `security audit` role if you are only using rules under `policies/compliance`
 
 >If you plan to use Cloud Custodian to enforce rules as lambda functions from Cloudtrial or perform actions on resources (e.g. turn on encyrption/backups, resize/start/stop resources that IAM will need more than `ReadOnlyAccess` to those resources (use common sense least-priviledge principles to restrict to only those set of permissions per resources to be managed by Cloud Custodian)
 </details>
@@ -99,7 +81,6 @@ mode: How/when the policy will be executed (e.g. event(API Triggered), periodic(
 ```
 
 #### Filters
-
 * Operator matching (in, not-in, absent, not-null, gte, regex, etc)
 * Arbitrary nesting of filters with ‘or’ and ‘and’ blocks.
 * Simple key/value are equality matches with value expressions
@@ -107,10 +88,7 @@ mode: How/when the policy will be executed (e.g. event(API Triggered), periodic(
 `regex` fliters use Jmespath expressions: http://jmespath.org/
 
 #### Actions
-
-
 </details>
-
 
 #### Complete Schema
 <details>
