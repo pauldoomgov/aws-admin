@@ -1,0 +1,34 @@
+policies:
+  - name: iam-user-filter-policy
+    resource: iam-user
+    description: |
+      Retrieve list of IAM users that match regex.
+    filters:
+      - type: value
+        key: UserName
+        op: regex
+        value: ".*"
+  - name: iam-role-filter-policy
+    resource: iam-role 
+    description: |
+      Retrieve list of IAM roles
+    filters:
+      - or:
+          - "tag:Audit": absent
+          - "tag:Audit": empty
+          - type: value
+            key: Name
+            op: regex
+            value: ".*"
+  - name: iam-group-filter-policy
+    resource: iam-group
+    description: |
+      Retrieve list of IAM groups 
+    filters:
+      - or:
+          - "tag:Audit": absent
+          - "tag:Audit": empty
+          - type: value
+            key: Name
+            op: regex
+            value: ".*"
