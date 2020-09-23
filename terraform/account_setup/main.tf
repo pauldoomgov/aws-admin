@@ -7,6 +7,8 @@ provider "aws" {
   }
 }
 
+data "aws_caller_identity" "jump_account" {}
+
 resource "aws_iam_group" "admins" {
   provider = aws.child
 
@@ -20,10 +22,6 @@ resource "aws_iam_group_policy_attachment" "admin" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
-locals {
-  jump_account  = "133032889584"
-}
-
 resource "aws_iam_role" "tts_securityaudit_role" {
   provider = aws.child
   name = "tts_securityaudit_role"
@@ -34,7 +32,7 @@ resource "aws_iam_role" "tts_securityaudit_role" {
     {
       "Action": "sts:AssumeRole",
       "Principal": {
-        "AWS": "arn:aws:iam::${local.jump_account}:root"
+        "AWS": "arn:aws:iam::${data.aws_caller_identity.jump_account.account_id}:root"
       },
       "Effect": "Allow",
       "Sid": ""
