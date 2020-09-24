@@ -21,6 +21,26 @@ module "u_18f" {
   email = "devops@gsa.gov"
 }
 
+module "tts-wide" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
+
+  name  = "tts"
+  email = "devops@gsa.gov"
+}
+
+module "PIF" {
+  source = "./business_unit"
+  providers = {
+    aws = aws.payer
+  }
+
+  name  = "PIF"
+  email = "devops@gsa.gov"
+}
+
 module "coe" {
   source = "./business_unit"
   providers = {
