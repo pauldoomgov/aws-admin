@@ -12,7 +12,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::810504390172:role/CrossAccountAdmin
+  role: arn:aws:iam::810504390172:role/tts_securityaudit_role
   tags:
   - program:TTS
   - budget:TTS
@@ -24,10 +24,10 @@ accounts:
   - us-east-1
   - us-east-2
   - us-central-1
-  - us-central-2  
+  - us-central-2
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::144433228153:role/CrossAccountAdmin
+  role: arn:aws:iam::144433228153:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS
@@ -42,7 +42,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::570696747145:role/CrossAccountAdmin
+  role: arn:aws:iam::570696747145:role/tts_securityaudit_role
   tags:
   - program:18F
   - budget:TTS
@@ -57,7 +57,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::765358534566:role/CrossAccountAdmin
+  role: arn:aws:iam::765358534566:role/tts_securityaudit_role
   tags:
   - program:solutions
   - budget:solutions
@@ -73,7 +73,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::195022191070:role/CrossAccountAdmin
+  role: arn:aws:iam::195022191070:role/tts_securityaudit_role
   tags:
   - program:api.data.gov
   - budget:solutions  
@@ -89,7 +89,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::213305845712:role/CrossAccountAdmin
+  role: arn:aws:iam::213305845712:role/tts_securityaudit_role
   tags:
   - program:search.gov
   - budget:solutions
@@ -105,7 +105,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::587807691409:role/CrossAccountAdmin
+  role: arn:aws:iam::587807691409:role/tts_securityaudit_role
   tags:
   - program:data.gov
   - budget:solutions
@@ -121,7 +121,7 @@ accounts:
   - us-central-2  
   - us-west-1
   - us-west-2
-  role: arn:aws:iam::541873662368:role/CrossAccountAdmin
+  role: arn:aws:iam::541873662368:role/tts_securityaudit_role
   tags:
   - program:PIF
   - budget:TTS

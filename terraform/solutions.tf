@@ -1,17 +1,14 @@
-module "opp_prod" {
-  source = "./account"
-  providers = {
-    aws = aws.payer
-  }
-
-  name        = "OPP Prod"
-  org_unit_id = module.solutions.org_unit_id
+locals {
+  opp_prod_account_id  = "765358534566"
+  data_gov_account_id  = "587807691409"
+  search_gov_account_id  = "213305845712"
+  api_data_gov_account_id  = "195022191070"    
 }
 
 module "opp_prod_setup" {
   source = "./account_setup"
 
-  account_id              = module.opp_prod.account_id
+  account_id              = local.opp_prod_account_id
   cross_account_role_name = local.role_name
 }
 
@@ -33,55 +30,27 @@ module "data_gov_ssb_setup" {
   cross_account_role_name = local.role_name
 }
 
-module "data_gov" {
-  source = "./account"
-  providers = {
-    aws = aws.payer
-  }
-
-  name        = "data.gov"
-  org_unit_id = module.solutions.org_unit_id
-}
-
 module "data_gov_setup" {
   source = "./account_setup"
 
-  account_id              = module.data_gov.account_id
+  account_id              = local.data_gov_account_id
   cross_account_role_name = local.role_name
 }
 
 # search.gov
-module "search_gov" {
-  source = "./account"
-  providers = {
-    aws = aws.payer
-  }
-
-  name        = "search.gov"
-  org_unit_id = module.solutions.org_unit_id
-}
 
 module "search_gov_setup" {
   source = "./account_setup"
 
-  account_id              = module.search_gov.account_id
+  account_id              = local.search_gov_account_id
   cross_account_role_name = local.role_name
 }
 
 # api.data.gov
-module "api_data_gov" {
-  source = "./account"
-  providers = {
-    aws = aws.payer
-  }
-
-  name        = "api-data-gov"
-  org_unit_id = module.solutions.org_unit_id
-}
 
 module "api_data_gov_setup" {
   source = "./account_setup"
 
-  account_id              = module.api_data_gov.account_id
+  account_id              = local.api_data_gov_account_id
   cross_account_role_name = local.role_name
 }
