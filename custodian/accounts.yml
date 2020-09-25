@@ -185,3 +185,19 @@ accounts:
   tags:
   - program:TTS
   - budget:TTS
+
+# coe
+- account_id: '533787958253'
+  name: 'coe-innovation-lab'
+  email: devops+aws-coe-innovation-lab@gsa.gov
+  regions:
+  - us-east-1
+  - us-east-2
+  - us-central-1
+  - us-central-2  
+  - us-west-1
+  - us-west-2
+  role: arn:aws:iam::533787958253:role/tts_securityaudit_role
+  tags:
+  - program:coe.gsa.gov
+  - budget:coe

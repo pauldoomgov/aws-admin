@@ -1,0 +1,12 @@
+policies:
+  - name: s3-all
+    description: |
+      S3 Audit
+    resource: s3
+
+  - name: s3-all-public
+    description: |
+      S3 Audit
+    resource: s3
+    filters:
+      - type: global-grants      

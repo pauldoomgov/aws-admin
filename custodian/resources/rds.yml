@@ -1,0 +1,20 @@
+policies:
+
+- name: rds-all
+  resource: rds
+  description: |
+    Return all RDS instances
+  comments: |
+    Retrieve all RDS instances
+
+- name: rds-unused-2days
+  resource: rds
+  description: |
+    Take the average number of connections over 2 days for databases that are greater than 2 days old.
+  filters:
+    - type: value
+      value_type: age
+      key: InstanceCreateTime
+      value: 2
+
+

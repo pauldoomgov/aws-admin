@@ -1,0 +1,9 @@
+
+policies:
+
+  - name: ec2-attributes 
+    resource: ec2 
+    description: |
+      Cloud Custodian EC2 Attributes 
+    comments: |
+      Retrieve EC2 Attributes
