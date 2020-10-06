@@ -12,7 +12,7 @@ https://github.com/capitalone/cloud-custodian
 <summary>Examples</summary>
 
 #### Cost Savings:
-* Resource Off Hours: Easy way to cut expenses by turning on/off resources on a automated schedule.
+* Resource Off Hours: Easy way to cut expenses by t urning on/off resources on a automated schedule.
 * Resource Resizing: Ability to automatically resize resources based on metrics over time.
 * Garbage Collection: Automatic notifications and removal of stale and unused resources.
 
@@ -56,7 +56,23 @@ From root directory `$ cd custodian`
 $ brew install pipenv
 $ pipenv install
 $ pipenv shell
-(custodian) $ c7n-org run -c accounts.yml -s output -u inventory/test.yml --dryrun
+(custodian) $ c7n-org run -c accounts.yml -s output -u inventory/test.yml
+```
+
+[Add schema support to vscode](https://cloudcustodian.io/docs/quickstart/index.html#editor-integration)
+```
+$ cd custodian
+$ pipenv shell
+$ custodian schema --json > schema.json
+Go to vscode settings.json (Preferences -> Settings -> Extensions -> YAML)
+Copy path to schema.json to path as a new entry under `yaml.schema`
+```
+
+Use c7n-org report to generate csv results
+```
+$ cd custodian
+$ pipenv shell
+$ c7n-org report -c accounts.yml -s output -u inventory/test.yml > output/test-report.csv
 ```
 
 >If you plan to use Cloud Custodian to enforce rules as lambda functions from Cloudtrial or perform actions on resources (e.g. turn on encyrption/backups, resize/start/stop resources that IAM will need more than `ReadOnlyAccess` to those resources (use common sense least-priviledge principles to restrict to only those set of permissions per resources to be managed by Cloud Custodian)

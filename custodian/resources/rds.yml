@@ -10,7 +10,7 @@ policies:
 - name: rds-underutilized-30percent-cpu
   resource: rds
   description: |
-    Take the average number of connections over 2 days for databases that are greater than 2 days old.
+    Average cpu under 30% over 3 days.
   filters:
     - type: metrics
       name: CPUUtilization
@@ -19,7 +19,7 @@ policies:
       days: 3
       period: 86400
 
-- name: rds-underutilized-30percent-cpu
+- name: rds-underutilized-0-connections
   resource: rds
   description: |
     Databases with 0 connections over 14 days.
