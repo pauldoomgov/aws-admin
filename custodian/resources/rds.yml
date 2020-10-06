@@ -7,14 +7,25 @@ policies:
   comments: |
     Retrieve all RDS instances
 
-- name: rds-unused-2days
+- name: rds-underutilized-30percent-cpu
   resource: rds
   description: |
     Take the average number of connections over 2 days for databases that are greater than 2 days old.
   filters:
-    - type: value
-      value_type: age
-      key: InstanceCreateTime
-      value: 2
+    - type: metrics
+      name: CPUUtilization
+      value: 30
+      op: less-than
+      days: 3
+      period: 86400
 
-
+- name: rds-underutilized-30percent-cpu
+  resource: rds
+  description: |
+    Databases with 0 connections over 14 days.
+  filters:
+    - type: metrics
+      name: DatabaseConnections
+      value: 0
+      days: 14
+      op: equal
