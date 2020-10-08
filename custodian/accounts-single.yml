@@ -1,0 +1,9 @@
+---
+accounts:
+
+# tts-prod
+- account_id: '133032889584'
+  name: 'tts-prod'
+  email: "devops@gsa.gov"
+  regions:
+  - us-east-1

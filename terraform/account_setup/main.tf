@@ -22,6 +22,25 @@ resource "aws_iam_group_policy_attachment" "admin" {
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
+#resource "aws_iam_role" "cloudcustodian_cloudtrail_role" {
+#  provider = aws.child
+#  name = "cloudcustodian_cloudtrail_role"
+#  assume_role_polciy = <<EOF
+#{
+#  "Version": "2012-10-17",
+#  "Statement": [
+#    {
+#      "Action": "sts:AssumeRole",
+#      "Principal": {
+#      },
+#      "Effect": "Allow",
+#      "Sid": ""
+#    }
+#  ]
+#}
+#EOF
+#}
+
 resource "aws_iam_role" "tts_securityaudit_role" {
   provider = aws.child
   name = "tts_securityaudit_role"
@@ -47,3 +66,5 @@ resource "aws_iam_role_policy_attachment" "tts_securityaudit_role" {
   role       = aws_iam_role.tts_securityaudit_role.name
   policy_arn = "arn:aws:iam::aws:policy/SecurityAudit"
 }
+
+

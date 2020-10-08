@@ -1,0 +1,52 @@
+resource "aws_s3_bucket" "tts-portfolio-s3bucket" {
+  bucket      = "tts-tech-portfolio"
+  acl         = "private"
+  versioning  {
+    enabled       = true
+  }
+
+  tags    = {
+    "owner"       = "tts-tech-portfolio"
+  }
+}
+
+# Get the account id
+
+
+# Define the path for cloudtrail logs
+cloudtrail_target = "${aws_s3_bucket.tts-portfolio-s3bucket.arn}/cloudtrail/AWSLogs/
+
+resource "aws_s3_bucket_policy" "tts-portfolio-s3bucket-policy" {
+  bucket      = aws_s3_bucket.tts-portfolio-s3bucket.id
+
+  policy      = <<POLICY
+{
+  "Version":    "2020-09-29",
+  "Id":         "cloudtrail-logging-policy",
+  "Statement":  [
+    {
+      "Sid":        "AWSCloudTrailAclCheck20150319",
+      "Effect":     "Allow",
+      "Principal":  {
+        "Service":    "cloudtrail.amazonaws.com"
+      },
+      "Action":     "s3:getBucketAcl",
+      "Resource":   ${ aws_s3_bucket.tts-portfolio-s3bucket.arn }
+    },
+      "Sid": "AWSCloudTrailWrite20150319",
+      "Effect": "Allow",
+      "Principal": {
+        "Service":    "cloudtrail.amazonaws.com"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::myBucketName/[optional prefix]/AWSLogs/myAccountID/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+    }
+  ]
+
+}
+POLICY
+}

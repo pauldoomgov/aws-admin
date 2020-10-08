@@ -1,7 +1,8 @@
 variable "account_id" {
-  type = string
+  type    = string
 }
 
 variable "cross_account_role_name" {
-  type = string
+  type    = string
+  default = "CrossAccountAdmin"
 }
