@@ -1,0 +1,37 @@
+
+policies:
+
+  - name: ec2-attributes 
+    resource: ec2 
+    description: |
+      Cloud Custodian EC2 Attributes 
+    comments: |
+      Retrieve EC2 Attributes
+
+  - name: ec2-underutilized-30percent-cpu
+    resource: ec2 
+    description: |
+      Cloud Custodian EC2 Attributes 
+    comments: |
+      Return EC2 instances with under 10% CPU used within the last 3 days.
+    filters:      
+    - type: metrics
+      name: CPUUtilization
+      days: 4
+      period: 86400
+      value: 30
+      op: less-than
+
+  - name: ec2-underutilized-0-connections
+    resource: ec2 
+    description: |
+      Cloud Custodian EC2 Attributes 
+    comments: |
+      Retrieve EC2 Attributes
+    filters:      
+      - type: metrics
+        name: NetworkPacketsIn
+        value: 100000
+        days: 3
+        op: less-than
+        statistics: Average

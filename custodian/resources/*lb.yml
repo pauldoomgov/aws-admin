@@ -1,0 +1,10 @@
+policies:
+  - name: elb-filter-policy
+    resource: elb 
+    description: |
+      Retrieve list of Classic ELBs
+
+  - name: app-elb-filter-policy
+    resource: app-elb 
+    description: |
+      Retrieve list of Network and Application Load Balancers 
