@@ -9,4 +9,4 @@ policies:
       S3 Audit
     resource: s3
     filters:
-      - type: global-grants      
+      - type: global-grants
