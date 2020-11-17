@@ -31,16 +31,6 @@ module "coe" {
   email = "connectcoe@gsa.gov"
 }
 
-module "login_gov" {
-  source = "./business_unit"
-  providers = {
-    aws = aws.payer
-  }
-
-  name  = "login-gov"
-  email = "security-team@login.gov"
-}
-
 module "solutions" {
   source = "./business_unit"
   providers = {
